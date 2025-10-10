@@ -4,31 +4,115 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Kazi Rifat Al Muin - Portfolio</title>
+    
+    <!-- SEO Meta Tags -->
+    <title>Kazi Rifat Al Muin - Competitive Programmer & Software Developer | Portfolio</title>
+    <meta name="description" content="Kazi Rifat Al Muin - CSE student at KUET, Competitive Programmer with Specialist rating on Codeforces, 1500+ problems solved. Expert in C++, Java, JavaScript, and web development.">
+    <meta name="keywords" content="Kazi Rifat Al Muin, Rifat Al Muin, KaziRifatAlMuin, competitive programming, codeforces specialist, KUET CSE, software developer, web developer, C++ programmer, Java developer, algorithm expert, ICPC contestant, programming portfolio, Bangladesh programmer">
+    <meta name="author" content="Kazi Rifat Al Muin">
+    <meta name="robots" content="index, follow">
+    <meta name="language" content="English">
+    <meta name="revisit-after" content="7 days">
+    
+    <!-- Open Graph / Facebook Meta Tags -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://kazirifatalmuin.github.io/My-Portfolio/">
+    <meta property="og:title" content="Kazi Rifat Al Muin - Competitive Programmer & Developer">
+    <meta property="og:description" content="CSE student at KUET | Codeforces Specialist | 1500+ Problems Solved | Expert in C++, Java, JavaScript">
+    <meta property="og:image" content="https://kazirifatalmuin.github.io/My-Portfolio/images/profile.jpg">
+    
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://kazirifatalmuin.github.io/My-Portfolio/">
+    <meta name="twitter:title" content="Kazi Rifat Al Muin - Competitive Programmer & Developer">
+    <meta name="twitter:description" content="CSE student at KUET | Codeforces Specialist | 1500+ Problems Solved">
+    <meta name="twitter:image" content="https://kazirifatalmuin.github.io/My-Portfolio/images/profile.jpg">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://kazirifatalmuin.github.io/My-Portfolio/">
+    
     <!-- Favicon -->
-    <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16x16.png">
+    <link rel="icon" type="image/png" href="images/logo.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="images/logo.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="images/logo.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="images/logo.png">
     <link rel="manifest" href="site.webmanifest">
+    
+    <!-- Fonts and Styles -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    
+    <!-- Structured Data / JSON-LD for SEO -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Kazi Rifat Al Muin",
+      "alternateName": "Rifat Al Muin",
+      "url": "https://kazirifatalmuin.github.io/My-Portfolio/",
+      "image": "https://kazirifatalmuin.github.io/My-Portfolio/images/profile.jpg",
+      "jobTitle": "Competitive Programmer & Software Developer",
+      "worksFor": {
+        "@type": "Organization",
+        "name": "KUET"
+      },
+      "alumniOf": {
+        "@type": "Organization",
+        "name": "Khulna University of Engineering & Technology"
+      },
+      "description": "CSE student at KUET specializing in competitive programming with 1500+ problems solved and Specialist rating on Codeforces",
+      "sameAs": [
+        "https://github.com/KaziRifatAlMuin",
+        "https://linkedin.com/in/rifatalmuin",
+        "https://codeforces.com/profile/RifatALmuiN",
+        "https://facebook.com/rifatalmuin21"
+      ],
+      "knowsAbout": ["Competitive Programming", "C++", "Java", "JavaScript", "Algorithms", "Data Structures", "Web Development"],
+      "email": "rifatalmuin.cse@gmail.com"
+    }
+    </script>
 </head>
 <body>
     <!-- Navigation -->
-    <nav class="navbar">
+    <nav class="navbar" role="navigation" aria-label="Main navigation">
         <div class="nav-brand">
-            <span class="brand-text">Rifat</span>
+            <img src="images/logo.png" alt="Kazi Rifat Al Muin Logo" class="nav-logo">
         </div>
         <div class="nav-links">
-            <a href="#home">Home</a>
-            <a href="#about">About</a>
-            <a href="#skills">Skills</a>
-            <a href="#projects">Projects</a>
-            <a href="#education">Education</a>
-            <a href="#contact">Contact</a>
+            <a href="#home" aria-label="Navigate to Home section">Home</a>
+            <a href="#about" aria-label="Navigate to About section">About</a>
+            <a href="#skills" aria-label="Navigate to Skills section">Skills</a>
+            <a href="#projects" aria-label="Navigate to Projects section">Projects</a>
+            <a href="#education" aria-label="Navigate to Education section">Education</a>
+            <a href="#contact" aria-label="Navigate to Contact section">Contact</a>
+        </div>
+        <button class="hamburger" aria-label="Toggle mobile menu" aria-expanded="false">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+    </nav>
+
+    <!-- Mobile Side Navigation -->
+    <nav class="side-nav" role="navigation" aria-label="Mobile navigation">
+        <div class="side-nav-header">
+            <div class="side-nav-logo">
+                <img src="images/logo.png" alt="Kazi Rifat Al Muin Logo" class="side-nav-logo-img">
+                <span class="brand-text">Rifat</span>
+            </div>
+            <button class="close-btn" aria-label="Close mobile menu">&times;</button>
+        </div>
+        <div class="side-nav-links">
+            <a href="#home" aria-label="Navigate to Home section"><i class="fas fa-home"></i> Home</a>
+            <a href="#about" aria-label="Navigate to About section"><i class="fas fa-user"></i> About</a>
+            <a href="#skills" aria-label="Navigate to Skills section"><i class="fas fa-code"></i> Skills</a>
+            <a href="#projects" aria-label="Navigate to Projects section"><i class="fas fa-project-diagram"></i> Projects</a>
+            <a href="#education" aria-label="Navigate to Education section"><i class="fas fa-graduation-cap"></i> Education</a>
+            <a href="#contact" aria-label="Navigate to Contact section"><i class="fas fa-envelope"></i> Contact</a>
         </div>
     </nav>
+    <div class="overlay" aria-hidden="true"></div>
 
     <!-- Main Content -->
     <main class="main-content">
@@ -52,7 +136,7 @@
                 </div>
                 <div class="hero-right">
                     <div class="profile-image">
-                        <img src="images/profile.jpg" alt="Kazi Rifat Al Muin" class="hero-profile-pic" />
+                        <img src="images/profile.jpg" alt="Kazi Rifat Al Muin - Competitive Programmer and Software Developer" class="hero-profile-pic" loading="eager" />
                     </div>
                 </div>
             </div>
@@ -386,7 +470,7 @@
                         <h4>Khulna University of Engineering & Technology (KUET)</h4>
                         <p>Currently pursuing CSE degree with focus on algorithms, data structures, and software development. Active in competitive programming and various tech communities.</p>
                         <div class="achievements">
-                            <span class="achievement">Competetive Programming</span>
+                            <span class="achievement">Competitive Programming</span>
                             <span class="achievement">AGS of SGIPC, Our Programming Club</span>
                         </div>
                     </div>
@@ -442,7 +526,7 @@
                         </div>
                         <div class="contact-details">
                             <h4>Email</h4>
-                            <p>kazirifatalmuin246@gmail.com</p>
+                            <p>contact@rifatalmuin.com</p>
                         </div>
                     </div>
 
@@ -466,15 +550,15 @@
                         </div>
                     </div>
 
-                    <div class="social-section">
+                    <!-- <div class="social-section hide-on-mobile">
                         <h4>Follow Me</h4>
                         <div class="social-links">
-                            <a href="https://github.com/KaziRifatAlMuin" class="social-link"><i class="fab fa-github"></i></a>
-                            <a href="https://linkedin.com/in/rifatalmuin" class="social-link"><i class="fab fa-linkedin"></i></a>
-                            <a href="https://codeforces.com/profile/RifatALmuiN" class="social-link"><i class="fas fa-code"></i></a>
-                            <a href="https://facebook.com/rifatalmuin21" class="social-link"><i class="fab fa-facebook"></i></a>
+                            <a href="https://github.com/KaziRifatAlMuin" class="social-link" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                            <a href="https://linkedin.com/in/rifatalmuin" class="social-link" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                            <a href="https://codeforces.com/profile/RifatALmuiN" class="social-link" aria-label="Codeforces"><i class="fas fa-code"></i></a>
+                            <a href="https://facebook.com/rifatalmuin21" class="social-link" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
                         </div>
-                    </div>
+                    </div> -->
                 </div>
 
                 <div class="contact-form">
@@ -498,10 +582,10 @@
         <section class="social">
             <h3>Connect With Me</h3>
             <div class="social-links">
-                <a href="https://github.com/KaziRifatAlMuin" class="social-link"><i class="fab fa-github"></i></a>
-                <a href="https://linkedin.com/in/rifatalmuin" class="social-link"><i class="fab fa-linkedin"></i></a>
-                <a href="https://codeforces.com/profile/RifatALmuiN" class="social-link"><i class="fas fa-code"></i></a>
-                <a href="https://facebook.com/rifatalmuin21" class="social-link"><i class="fab fa-facebook"></i></a>
+                <a href="https://github.com/KaziRifatAlMuin" class="social-link" target="_blank" rel="noopener noreferrer" aria-label="GitHub Profile"><i class="fab fa-github"></i></a>
+                <a href="https://linkedin.com/in/rifatalmuin" class="social-link" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn Profile"><i class="fab fa-linkedin"></i></a>
+                <a href="https://codeforces.com/profile/RifatALmuiN" class="social-link" target="_blank" rel="noopener noreferrer" aria-label="Codeforces Profile"><i class="fas fa-code"></i></a>
+                <a href="https://facebook.com/rifatalmuin21" class="social-link" target="_blank" rel="noopener noreferrer" aria-label="Facebook Profile"><i class="fab fa-facebook"></i></a>
             </div>
         </section>
     </main>

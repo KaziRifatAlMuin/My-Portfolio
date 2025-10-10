@@ -5,20 +5,106 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         const target = document.querySelector(this.getAttribute('href'));
         if (target) {
             target.scrollIntoView({ behavior: 'smooth' });
+            // Close mobile menu if open
+            closeMobileMenu();
         }
     });
 });
 
-// Enhanced navbar scroll effect
+// Mobile Menu Functionality
+const hamburger = document.querySelector('.hamburger');
+const sideNav = document.querySelector('.side-nav');
+const overlay = document.querySelector('.overlay');
+const closeBtn = document.querySelector('.close-btn');
+
+function openMobileMenu() {
+    hamburger.classList.add('active');
+    hamburger.setAttribute('aria-expanded', 'true');
+    sideNav.classList.add('active');
+    overlay.classList.add('active');
+    overlay.setAttribute('aria-hidden', 'false');
+    document.body.style.overflow = 'hidden';
+}
+
+function closeMobileMenu() {
+    hamburger.classList.remove('active');
+    hamburger.setAttribute('aria-expanded', 'false');
+    sideNav.classList.remove('active');
+    overlay.classList.remove('active');
+    overlay.setAttribute('aria-hidden', 'true');
+    document.body.style.overflow = '';
+}
+
+hamburger.addEventListener('click', () => {
+    if (sideNav.classList.contains('active')) {
+        closeMobileMenu();
+    } else {
+        openMobileMenu();
+    }
+});
+
+closeBtn.addEventListener('click', closeMobileMenu);
+overlay.addEventListener('click', closeMobileMenu);
+
+// Close menu on escape key
+document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && sideNav.classList.contains('active')) {
+        closeMobileMenu();
+    }
+});
+
+// Enhanced navbar scroll effect with logo spinning (with momentum and easing)
+let lastScrollY = window.scrollY;
+let logoRotation = 0;
+let isSpinning = false;
+let scrollTimeout;
+
 window.addEventListener('scroll', () => {
     const navbar = document.querySelector('.navbar');
-    if (window.scrollY > 50) {
+    const logo = document.querySelector('.nav-logo');
+    const sideNavLogo = document.querySelector('.side-nav-logo-img');
+    const currentScrollY = window.scrollY;
+    const scrollDifference = Math.abs(currentScrollY - lastScrollY);
+    
+    // Navbar background change
+    if (currentScrollY > 50) {
         navbar.style.background = 'rgba(16, 7, 43, 0.95)';
         navbar.style.boxShadow = '0 8px 32px rgba(0, 0, 0, 0.4)';
     } else {
         navbar.style.background = 'rgba(14, 15, 43, 0.85)';
         navbar.style.boxShadow = '0 4px 20px rgba(0, 0, 0, 0.3)';
     }
+    
+    // Only trigger new spin if not already spinning and there's significant scroll
+    if (!isSpinning && scrollDifference > 5) {
+        isSpinning = true;
+        
+        // Add 3-5 full rotations (1080° to 1800°) randomly
+        const rotations = 3 + Math.random() * 2; // 3 to 5 rotations
+        const direction = (currentScrollY - lastScrollY) > 0 ? 1 : -1; // Scroll direction
+        const targetRotation = logoRotation + (direction * rotations * 360);
+        
+        // Apply smooth rotation with CSS transition
+        if (logo) {
+            logo.style.transition = 'transform 1.5s cubic-bezier(0.25, 0.46, 0.45, 0.94)';
+            logo.style.transform = `rotate(${targetRotation}deg)`;
+        }
+        if (sideNavLogo) {
+            sideNavLogo.style.transition = 'transform 1.5s cubic-bezier(0.25, 0.46, 0.45, 0.94)';
+            sideNavLogo.style.transform = `rotate(${targetRotation}deg)`;
+        }
+        
+        logoRotation = targetRotation;
+        
+        // Reset spinning flag after animation completes
+        setTimeout(() => {
+            isSpinning = false;
+            // Normalize rotation to prevent huge numbers
+            logoRotation = logoRotation % 360;
+        }, 1500); // Match transition duration
+    }
+    
+    lastScrollY = currentScrollY;
 });
 
 // Advanced element animation observer
