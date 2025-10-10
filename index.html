@@ -478,11 +478,14 @@
                 </div>
 
                 <div class="contact-form">
-                    <form id="contactForm">
+                    <form id="contactForm" action="https://api.web3forms.com/submit" method="POST">
+                        <input type="hidden" name="access_key" value="51d312ac-2af3-4467-bdbb-634e254da658">
                         <input type="text" id="name" name="name" placeholder="Your Name" class="form-input" required>
                         <input type="email" id="email" name="email" placeholder="Your Email" class="form-input" required>
                         <input type="text" id="subject" name="subject" placeholder="Subject" class="form-input">
                         <textarea id="message" name="message" placeholder="Your Message" rows="5" class="form-textarea" required></textarea>
+                        <!-- Honeypot spam protection (hidden) -->
+                        <input type="checkbox" name="botcheck" class="hidden" style="display:none;">
                         <button type="submit" class="btn btn-primary">
                             <i class="fas fa-paper-plane"></i> Send Message
                         </button>

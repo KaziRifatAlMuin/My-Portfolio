@@ -496,44 +496,40 @@ document.addEventListener('DOMContentLoaded', function() {
         startAutoRotate();
     }
 
-    // Contact Form Handler - Works with both HTML forms and ASP.NET forms
-    const contactFormElement = document.getElementById('contactForm') || 
-                              document.querySelector('form') || 
-                              document.querySelector('.contact-form form');
-    
+    // Intercept form submit and submit via fetch to Web3Forms so the user stays on the page
+    const contactFormElement = document.getElementById('contactForm');
+
     if (contactFormElement) {
-        contactFormElement.addEventListener('submit', function(e) {
+        contactFormElement.addEventListener('submit', async function (e) {
             e.preventDefault();
-            
-            // Get form data - works with both regular forms and ASP.NET forms
-            const formData = new FormData(this);
-            
-            // Get data from FormData or directly from elements
-            const messageData = {
-                name: formData.get('name') || 
-                      document.querySelector('[name="name"]')?.value || 
-                      document.querySelector('#txtName')?.value || '',
-                email: formData.get('email') || 
-                       document.querySelector('[name="email"]')?.value || 
-                       document.querySelector('#txtEmail')?.value || '',
-                subject: formData.get('subject') || 
-                         document.querySelector('[name="subject"]')?.value || 
-                         document.querySelector('#txtSubject')?.value || 'No Subject',
-                message: formData.get('message') || 
-                         document.querySelector('[name="message"]')?.value || 
-                         document.querySelector('#txtMessage')?.value || ''
-            };
-            
-            // Simple validation
-            if (!messageData.name || !messageData.email || !messageData.message) {
-                showPopup('Please fill in all required fields!', 'error');
+
+            const form = this;
+            const formData = new FormData(form);
+
+            // Honeypot check (if filled, treat as bot)
+            if (formData.get('botcheck')) {
+                try { form.reset(); } catch (err) { /* ignore */ }
                 return;
             }
-            
-            // Show loading state
-            const submitButton = this.querySelector('button[type="submit"], input[type="submit"], .btn-primary');
+
+            const accessKey = formData.get('access_key') || document.querySelector('input[name="access_key"]')?.value;
+            if (!accessKey) {
+                showPopup('Missing Web3Forms access key. Please configure it in the form.', 'error');
+                return;
+            }
+
+            // Basic validation
+            const name = formData.get('name')?.toString().trim();
+            const email = formData.get('email')?.toString().trim();
+            const message = formData.get('message')?.toString().trim();
+            if (!name || !email || !message) {
+                showPopup('Please fill in all required fields (name, email, message).', 'error');
+                return;
+            }
+
+            // Show loading state on submit button
+            const submitButton = form.querySelector('button[type="submit"], input[type="submit"], .btn-primary');
             const originalButtonText = submitButton?.innerHTML || submitButton?.value || 'Send Message';
-            
             if (submitButton) {
                 if (submitButton.tagName === 'BUTTON') {
                     submitButton.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
@@ -542,31 +538,39 @@ document.addEventListener('DOMContentLoaded', function() {
                 }
                 submitButton.disabled = true;
             }
-            
-            // Send to Google Sheets
-            sendToGoogleSheets(messageData)
-                .then(() => {
-                    // Show success popup
-                    showPopup(`Thank you ${messageData.name}! Your message has been sent to Google Sheets. I'll get back to you within 24 hours.`, 'success');
-                    
-                    // Clear form
-                    this.reset();
-                })
-                .catch(error => {
-                    console.error('Error sending message:', error);
-                    showPopup('Sorry, there was an error sending your message. Please try again later.', 'error');
-                })
-                .finally(() => {
-                    // Reset button
-                    if (submitButton) {
-                        if (submitButton.tagName === 'BUTTON') {
-                            submitButton.innerHTML = originalButtonText;
-                        } else {
-                            submitButton.value = originalButtonText;
-                        }
-                        submitButton.disabled = false;
-                    }
+
+            try {
+                const payload = {};
+                formData.forEach((value, key) => { payload[key] = value; });
+
+                const res = await fetch('https://api.web3forms.com/submit', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ access_key: accessKey, ...payload })
                 });
+
+                const result = await res.json().catch(() => ({}));
+
+                if (res.ok) {
+                    showPopup('Thank you! Your message has been sent successfully.', 'success');
+                    try { form.reset(); } catch (err) { /* ignore */ }
+                } else {
+                    const errMessage = result.message || result.error || `Server returned ${res.status}`;
+                    showPopup(`Failed to send message: ${errMessage}`, 'error');
+                }
+            } catch (err) {
+                console.error('Web3Forms submit error:', err);
+                showPopup('An error occurred while sending your message. Please try again later.', 'error');
+            } finally {
+                if (submitButton) {
+                    if (submitButton.tagName === 'BUTTON') {
+                        submitButton.innerHTML = originalButtonText;
+                    } else {
+                        submitButton.value = originalButtonText;
+                    }
+                    submitButton.disabled = false;
+                }
+            }
         });
     }
 });
@@ -620,95 +624,8 @@ function hidePopup() {
     }
 }
 
-// Google Sheets Integration with your deployment URL
-function sendToGoogleSheets(data) {
-    // Your Google Apps Script Web App URL
-    const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbzgrAtFprHBxdK0FyGmOWvGhvBq5ujkYGw-4E2a04k2fuBPoreDfBJL8nDMzjeT4o0f2A/exec';
-    
-    return new Promise((resolve, reject) => {
-        fetch(GOOGLE_SCRIPT_URL, {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify({
-                name: data.name,
-                email: data.email,
-                subject: data.subject,
-                message: data.message,
-                timestamp: new Date().toISOString()
-            }),
-            mode: 'no-cors' // Required for Google Apps Script
-        })
-        .then(() => {
-            // Since we're using no-cors mode, we can't read the response
-            // But if we get here, the request was sent successfully
-            console.log('Message sent to Google Sheets:', data);
-            
-            // Also save to localStorage as backup
-            saveToLocalStorage(data);
-            
-            resolve();
-        })
-        .catch(error => {
-            console.error('Error sending to Google Sheets:', error);
-            
-            // Still save to localStorage as fallback
-            saveToLocalStorage(data);
-            
-            reject(error);
-        });
-    });
-}
+// NOTE: sendContact function removed on purpose. All contact submissions are handled locally
+// by the dummy handler above and do NOT transmit or store any data.
 
-// Save to localStorage as backup
-function saveToLocalStorage(messageData) {
-    const timestamp = new Date().toISOString();
-    const messageWithTimestamp = {
-        ...messageData,
-        timestamp,
-        id: Date.now()
-    };
-    
-    // Get existing messages
-    let messages = JSON.parse(localStorage.getItem('portfolioMessages') || '[]');
-    
-    // Add new message
-    messages.push(messageWithTimestamp);
-    
-    // Save back to localStorage
-    localStorage.setItem('portfolioMessages', JSON.stringify(messages));
-    
-    console.log('Message saved to localStorage:', messageWithTimestamp);
-}
-
-// Function to view saved messages in localStorage (for your reference)
-function viewSavedMessages() {
-    const messages = JSON.parse(localStorage.getItem('portfolioMessages') || '[]');
-    console.table(messages);
-    return messages;
-}
-
-// Function to test Google Sheets connection
-function testGoogleSheets() {
-    const testData = {
-        name: 'Test User',
-        email: 'test@example.com',
-        subject: 'Test Message',
-        message: 'This is a test message to verify the Google Sheets integration is working.'
-    };
-    
-    console.log('Testing Google Sheets connection...');
-    sendToGoogleSheets(testData)
-        .then(() => {
-            console.log('✅ Test successful! Check your Google Sheet for the test message.');
-        })
-        .catch(error => {
-            console.error('❌ Test failed:', error);
-        });
-}
-
-// Global functions
+// Global functions: expose only hidePopup
 window.hidePopup = hidePopup;
-window.viewSavedMessages = viewSavedMessages;
-window.testGoogleSheets = testGoogleSheets;
