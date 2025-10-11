@@ -17,6 +17,26 @@ body {
     overflow-x: hidden;
 }
 
+/* Global link styling - all links cyan */
+a {
+    color: #00ffff;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: #40e0d0;
+}
+
+/* Remove underline from links globally while preserving color and hover effects */
+a, a:link, a:visited {
+    text-decoration: none !important;
+}
+
+a:hover, a:focus {
+    text-decoration: none !important;
+    outline: none;
+}
+
 /* Ensure images are responsive */
 img {
     max-width: 100%;
@@ -603,6 +623,14 @@ img {
         grid-template-columns: repeat(2, 1fr);
         gap: 1.5rem;
     }
+
+    .insights-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .insights-aside {
+        text-align: left;
+    }
     
     .stat-item {
         max-width: none;
@@ -1032,6 +1060,86 @@ img {
         box-shadow: 0 8px 25px rgba(0, 255, 255, 0.2);
     }
 
+/* Insights Section */
+.insights-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+    margin-bottom: 3rem;
+}
+
+@media (max-width: 968px) {
+    .insights-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+.insight-card {
+    background: linear-gradient(135deg, rgba(16, 7, 43, 0.6), rgba(14, 15, 43, 0.85));
+    border-radius: 20px;
+    border: 1px solid rgba(0, 255, 255, 0.1);
+    padding: 2rem;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+    transition: transform 0.4s ease, border-color 0.4s ease;
+}
+
+    .insight-card:hover {
+        transform: translateY(-8px);
+        border-color: rgba(0, 255, 255, 0.3);
+    }
+
+.insight-card h2 {
+    color: #ffffff;
+    margin-bottom: 1rem;
+    line-height: 1.4;
+}
+
+.insight-meta {
+    font-size: 0.9rem;
+    color: #8fa5c2;
+    margin-bottom: 1rem;
+}
+
+.insight-card p {
+    margin-bottom: 1rem;
+    color: #d1d7e0;
+}
+
+.insight-card a {
+    color: #40e0d0;
+    text-decoration: underline;
+}
+
+.insight-card ul,
+.insight-card ol {
+    margin-left: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.insight-card li {
+    margin-bottom: 0.6rem;
+}
+
+.insights-aside {
+    background: rgba(16, 7, 43, 0.7);
+    border: 1px solid rgba(0, 255, 255, 0.1);
+    border-radius: 20px;
+    padding: 2rem;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.insights-aside h3 {
+    color: #ffffff;
+    margin-bottom: 1rem;
+}
+
+.insights-aside p {
+    color: #d1d7e0;
+    margin-bottom: 1.5rem;
+    line-height: 1.6;
+}
+
 /* Education Page */
 .education-timeline {
     max-width: 800px;
@@ -1106,6 +1214,82 @@ img {
     border-radius: 12px;
     font-size: 0.8rem;
     margin: 0.2rem;
+}
+
+/* FAQ Section */
+.faq-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.faq-item {
+    background: linear-gradient(135deg, rgba(16, 7, 43, 0.55), rgba(14, 15, 43, 0.85));
+    border-radius: 16px;
+    border: 1px solid rgba(0, 255, 255, 0.12);
+    overflow: hidden;
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.25);
+    transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+    .faq-item:hover {
+        border-color: rgba(0, 255, 255, 0.3);
+    }
+
+.faq-question {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem 2rem;
+    cursor: pointer;
+    user-select: none;
+    transition: background 0.3s ease;
+}
+
+    .faq-question:hover {
+        background: rgba(0, 255, 255, 0.05);
+    }
+
+.faq-question h2 {
+    color: #ffffff;
+    margin: 0;
+    font-size: 1.1rem;
+    flex: 1;
+}
+
+.faq-arrow {
+    font-size: 1.2rem;
+    color: #00ffff;
+    transition: transform 0.3s ease;
+}
+
+.faq-item.active .faq-arrow {
+    transform: rotate(180deg);
+}
+
+.faq-answer {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease, padding 0.4s ease;
+    padding: 0 2rem;
+}
+
+.faq-item.active .faq-answer {
+    max-height: 500px;
+    padding: 0 2rem 1.5rem 2rem;
+}
+
+.faq-answer p {
+    color: #d1d7e0;
+    line-height: 1.7;
+    margin: 0;
+}
+
+.faq-answer a {
+    color: #40e0d0;
+    text-decoration: underline;
 }
 
 /* Contact Page */
@@ -1849,6 +2033,10 @@ img {
         grid-template-columns: repeat(2, 1fr);
     }
 
+    .insights-aside {
+        padding: 1.5rem;
+    }
+
     .stat-number {
         font-size: 1.8rem;
     }
@@ -2016,6 +2204,14 @@ img {
 
     .stat-number {
         font-size: 1.5rem;
+    }
+
+    .insights-aside {
+        text-align: left;
+    }
+
+    .faq-grid {
+        grid-template-columns: 1fr;
     }
     
     /* Education Timeline - Smaller Icon */
