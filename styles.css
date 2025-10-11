@@ -1059,17 +1059,26 @@ img {
         border: 1px solid rgba(0, 255, 255, 0.2);
         border-radius: 12px;
         padding: 2rem;
-        text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 1rem;
         margin-top: 1rem;
     }
     .insights-aside h3 {
         color: #00ffff;
-        margin-bottom: 1rem;
+        margin-bottom: 0;
     }
     .insights-aside p {
         color: #d1d7e0;
-        margin-bottom: 1.5rem;
-}
+        margin-bottom: 0;
+        text-align: center;
+    }
+    .insights-aside .btn {
+        display: inline-block;
+        margin-top: 0.5rem;
+    }
 
 /* Projects Page */
 .projects-grid {
@@ -2329,6 +2338,19 @@ img {
     .side-nav-links a {
         font-size: 1rem;
         padding: 0.9rem 1.5rem;
+    }
+}
+
+
+.insights-aside .btn {
+    width: auto !important;
+    min-width: 200px;
+}
+
+@media (max-width: 360px) {
+    /* On extremely small screens keep it slightly smaller but centered */
+    .insights-aside .btn {
+        min-width: 160px;
     }
 }
 
