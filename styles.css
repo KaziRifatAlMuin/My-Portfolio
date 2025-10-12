@@ -17,26 +17,6 @@ body {
     overflow-x: hidden;
 }
 
-/* Global link styling - all links cyan */
-a {
-    color: #00ffff;
-    transition: color 0.3s ease;
-}
-
-a:hover {
-    color: #40e0d0;
-}
-
-/* Remove underline from links globally while preserving color and hover effects */
-a, a:link, a:visited {
-    text-decoration: none !important;
-}
-
-a:hover, a:focus {
-    text-decoration: none !important;
-    outline: none;
-}
-
 /* Ensure images are responsive */
 img {
     max-width: 100%;
@@ -623,14 +603,6 @@ img {
         grid-template-columns: repeat(2, 1fr);
         gap: 1.5rem;
     }
-
-    .insights-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .insights-aside {
-        text-align: left;
-    }
     
     .stat-item {
         max-width: none;
@@ -962,124 +934,6 @@ img {
     }
 }
 
-.insights-grid {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 1.5rem;
-    margin-bottom: 2rem;
-    max-width: 900px;
-    margin-left: auto;
-    margin-right: auto;
-}
-    
-    /* Compact card styling */
-    .insight-card {
-        background: rgba(255, 255, 255, 0.03);
-        border: 1px solid rgba(255, 255, 255, 0.1);
-        border-radius: 12px;
-        padding: 1.5rem;
-        cursor: pointer;
-        transition: all 0.3s ease;
-    }
-    .insight-card:hover {
-        background: rgba(255, 255, 255, 0.05);
-        border-color: rgba(0, 255, 255, 0.3);
-        transform: translateY(-2px);
-    }
-    
-    .insight-card header h2 {
-        font-size: 1.25rem;
-        color: #00ffff;
-        margin-bottom: 0.5rem;
-        line-height: 1.4;
-    }
-    
-    .insight-meta {
-        font-size: 0.85rem;
-        color: #8fa5c2;
-        margin-bottom: 0.75rem;
-    }
-    
-    /* Preview text: only 1 line visible */
-    .insight-preview {
-        color: #d1d7e0;
-        line-height: 1.6;
-        margin-bottom: 0.75rem;
-        display: -webkit-box;
-        -webkit-line-clamp: 1;
-        -webkit-box-orient: vertical;
-        overflow: hidden;
-    }
-    
-    /* Full content: hidden by default */
-    .insight-full {
-        display: none;
-        color: #d1d7e0;
-        line-height: 1.6;
-        margin-top: 1rem;
-    }
-    .insight-full p {
-        margin-bottom: 1rem;
-    }
-    .insight-full a {
-        color: #00ffff;
-        text-decoration: none;
-    }
-    
-    /* Show full content when expanded */
-    .insight-card.expanded .insight-preview {
-        display: none;
-    }
-    .insight-card.expanded .insight-full {
-        display: block;
-    }
-    
-    /* Read more button */
-    .read-more-btn {
-        display: inline-block;
-        color: #00ffff;
-        font-size: 0.9rem;
-        font-weight: 500;
-        padding: 0.5rem 1rem;
-        border: 1px solid rgba(0, 255, 255, 0.3);
-        border-radius: 20px;
-        background: transparent;
-        cursor: pointer;
-        transition: all 0.2s ease;
-    }
-    .read-more-btn:hover {
-        background: rgba(0, 255, 255, 0.1);
-        border-color: #00ffff;
-    }
-    
-    /* Mentorship aside */
-    .insights-aside {
-        grid-column: 1 / -1;
-        background: rgba(0, 255, 255, 0.05);
-        border: 1px solid rgba(0, 255, 255, 0.2);
-        border-radius: 12px;
-        padding: 2rem;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        gap: 1rem;
-        margin-top: 1rem;
-    }
-    .insights-aside h3 {
-        color: #00ffff;
-        margin-bottom: 0;
-    }
-    .insights-aside p {
-        color: #d1d7e0;
-        margin-bottom: 0;
-        text-align: center;
-    }
-    .insights-aside .btn {
-        display: inline-block;
-        margin-top: 0.5rem;
-    }
-
 /* Projects Page */
 .projects-grid {
     display: grid;
@@ -1178,9 +1032,6 @@ img {
         box-shadow: 0 8px 25px rgba(0, 255, 255, 0.2);
     }
 
-/* Insights Section */
-/* Duplicate Insights block removed; consolidated single-column rules exist earlier in this file */
-
 /* Education Page */
 .education-timeline {
     max-width: 800px;
@@ -1255,82 +1106,6 @@ img {
     border-radius: 12px;
     font-size: 0.8rem;
     margin: 0.2rem;
-}
-
-/* FAQ Section */
-.faq-grid {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 1.5rem;
-    max-width: 900px;
-    margin: 0 auto;
-}
-
-.faq-item {
-    background: linear-gradient(135deg, rgba(16, 7, 43, 0.55), rgba(14, 15, 43, 0.85));
-    border-radius: 16px;
-    border: 1px solid rgba(0, 255, 255, 0.12);
-    overflow: hidden;
-    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.25);
-    transition: transform 0.3s ease, border-color 0.3s ease;
-}
-
-    .faq-item:hover {
-        border-color: rgba(0, 255, 255, 0.3);
-    }
-
-.faq-question {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 1.5rem 2rem;
-    cursor: pointer;
-    user-select: none;
-    transition: background 0.3s ease;
-}
-
-    .faq-question:hover {
-        background: rgba(0, 255, 255, 0.05);
-    }
-
-.faq-question h2 {
-    color: #ffffff;
-    margin: 0;
-    font-size: 1.1rem;
-    flex: 1;
-}
-
-.faq-arrow {
-    font-size: 1.2rem;
-    color: #00ffff;
-    transition: transform 0.3s ease;
-}
-
-.faq-item.active .faq-arrow {
-    transform: rotate(180deg);
-}
-
-.faq-answer {
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.4s ease, padding 0.4s ease;
-    padding: 0 2rem;
-}
-
-.faq-item.active .faq-answer {
-    max-height: 500px;
-    padding: 0 2rem 1.5rem 2rem;
-}
-
-.faq-answer p {
-    color: #d1d7e0;
-    line-height: 1.7;
-    margin: 0;
-}
-
-.faq-answer a {
-    color: #40e0d0;
-    text-decoration: underline;
 }
 
 /* Contact Page */
@@ -2074,10 +1849,6 @@ img {
         grid-template-columns: repeat(2, 1fr);
     }
 
-    .insights-aside {
-        padding: 1.5rem;
-    }
-
     .stat-number {
         font-size: 1.8rem;
     }
@@ -2246,14 +2017,6 @@ img {
     .stat-number {
         font-size: 1.5rem;
     }
-
-    .insights-aside {
-        text-align: left;
-    }
-
-    .faq-grid {
-        grid-template-columns: 1fr;
-    }
     
     /* Education Timeline - Smaller Icon */
     .timeline-marker {
@@ -2338,19 +2101,6 @@ img {
     .side-nav-links a {
         font-size: 1rem;
         padding: 0.9rem 1.5rem;
-    }
-}
-
-
-.insights-aside .btn {
-    width: auto !important;
-    min-width: 200px;
-}
-
-@media (max-width: 360px) {
-    /* On extremely small screens keep it slightly smaller but centered */
-    .insights-aside .btn {
-        min-width: 160px;
     }
 }
 
