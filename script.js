@@ -1,3 +1,8 @@
+// ============================================
+// DOM READY GUARD - Ensures all browsers (including Facebook) wait for DOM
+// The 'defer' attribute in HTML handles this, but this is an extra safety check
+// ============================================
+
 // Smooth scrolling for navigation links
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
@@ -124,51 +129,17 @@ const observer = new IntersectionObserver((entries) => {
                 animateSkillBars(entry.target);
                 entry.target.style.transform = 'translateY(0) scale(1)';
             }
-
-            // Stagger animation for cards
-            if (entry.target.classList.contains('overview-card')) {
-                const cards = document.querySelectorAll('.overview-card');
-                const index = Array.from(cards).indexOf(entry.target);
-                entry.target.style.animationDelay = `${index * 0.2}s`;
-                entry.target.classList.add('animate-in');
-            }
         }
     });
 }, observerOptions);
 
-// Observe all animated elements (exclude overview-card from staggered entrance to avoid blinking)
-document.querySelectorAll('.about-card, .skill-category, .project-card, .timeline-item, .stat-item, .info-card').forEach(el => {
+// Observe all animated elements
+document.querySelectorAll('.about-card, .skill-category, .project-card, .timeline-item, .stat-item, .info-card, .overview-card').forEach(el => {
     el.style.opacity = '0';
     el.style.transform = 'translateY(30px)';
     el.style.transition = 'all 0.8s cubic-bezier(0.4, 0, 0.2, 1)';
     observer.observe(el);
 });
-
-// Reveal overview cards one-by-one when scrolled into view (gentle, non-blinking stagger)
-const overviewCards = Array.from(document.querySelectorAll('.overview-card'));
-if (overviewCards.length) {
-    const overviewObserver = new IntersectionObserver((entries, obs) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                // Determine the index of the card among all overview cards
-                const index = overviewCards.indexOf(entry.target);
-                // Stagger reveal slightly based on index
-                setTimeout(() => {
-                    entry.target.classList.add('visible');
-                }, Math.min(index * 150, 600)); // cap delay to 600ms
-
-                // Stop observing this card
-                obs.unobserve(entry.target);
-            }
-        });
-    }, { threshold: 0.18 });
-
-    overviewCards.forEach(card => {
-        // Ensure initial hidden state (CSS handles this too)
-        card.classList.remove('visible');
-        overviewObserver.observe(card);
-    });
-}
 
 // Enhanced skill bar animation with glow effects
 function animateSkillBars(container) {

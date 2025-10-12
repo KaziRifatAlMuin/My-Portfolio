@@ -207,8 +207,8 @@ img {
 
 /* Hero Section */
 .hero {
-    padding: 4rem 1rem;
-    min-height: 80vh;
+    padding: 3rem 2rem;
+    min-height: 65vh;
     display: flex;
     align-items: center;
     background: linear-gradient(135deg, rgba(14, 15, 43, 0.8) 0%, rgba(16, 7, 43, 0.6) 100%);
@@ -220,9 +220,9 @@ img {
     width: 100%;
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 4rem;
+    gap: 3rem;
     align-items: center;
-    padding: 0 1rem;
+    padding: 0 2rem;
 }
 
 .hero-left {
@@ -281,8 +281,8 @@ img {
 }
 
 .profile-image {
-    width: 300px;
-    height: 300px;
+    width: 450px;
+    height: 450px;
     border-radius: 50%;
     background: linear-gradient(135deg, rgba(16, 7, 43, 0.6), rgba(14, 15, 43, 0.8));
     backdrop-filter: blur(15px);
@@ -440,22 +440,10 @@ img {
     padding: 2rem;
     text-align: center;
     color: #e1e5f2;
-    transition: all 0.4s ease;
     position: relative;
     overflow: hidden;
-}
-
-/* Start hidden for staggered reveal */
-.overview-card {
-    opacity: 0;
-    transform: translateY(18px);
     will-change: opacity, transform;
-}
-
-.overview-card.visible {
-    opacity: 1;
-    transform: translateY(0);
-    transition: opacity 520ms cubic-bezier(0.2, 0.8, 0.2, 1), transform 520ms cubic-bezier(0.2, 0.8, 0.2, 1);
+    transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
     .overview-card::before {
@@ -848,10 +836,11 @@ img {
     }
 }
 
-/* Large screens: show skills in 3 columns for wider viewports */
-@media (min-width: 1280px) {
+/* PC/Desktop screens: show skills in 3 columns for all desktop viewports */
+@media (min-width: 1024px) {
     .skills-grid {
         grid-template-columns: repeat(3, 1fr);
+        max-width: 1400px;
     }
 }
 
@@ -1888,20 +1877,20 @@ img {
     }
 
     .profile-image {
-        width: 250px;
-        height: 250px;
+        width: 350px;
+        height: 350px;
     }
 
     .hero-title .name {
-        font-size: 2.2em;
+        font-size: 2.2rem;
     }
 
     .hero-subtitle {
-        font-size: 1.1rem;
+        font-size: 1.15rem;
     }
 
     .hero-description {
-        font-size: 1rem;
+        font-size: 1.05rem;
     }
 }
 
@@ -1912,12 +1901,13 @@ img {
     }
 
     .hero {
-        padding: 2rem 1rem;
+        padding: 2rem 1.5rem;
         min-height: auto;
     }
 
     .hero-content {
         gap: 2rem;
+        padding: 0 1.5rem;
     }
 
     .page-section {
@@ -2050,6 +2040,11 @@ img {
 
     .hero {
         padding: 1.5rem 1rem;
+        min-height: auto;
+    }
+
+    .hero-content {
+        padding: 0 1rem;
     }
 
     .hero-title .greeting {
@@ -2057,7 +2052,7 @@ img {
     }
 
     .hero-title .name {
-        font-size: 0.8rem;
+        font-size: 1.8rem;
     }
 
     .hero-subtitle {
@@ -2069,8 +2064,8 @@ img {
     }
 
     .profile-image {
-        width: 200px;
-        height: 200px;
+        width: 280px;
+        height: 280px;
     }
 
     .hero-buttons {
@@ -2366,21 +2361,22 @@ img {
     }
     
     .hero {
-        padding: 3rem 1.5rem;
+        padding: 2.5rem 2rem;
+        min-height: 60vh;
     }
     
     .hero-content {
-        gap: 2rem;
-        padding: 0 1rem;
+        gap: 2.5rem;
+        padding: 0 2rem;
     }
     
     .hero-title .name {
-        font-size: 2.5rem;
+        font-size: 2.3rem;
     }
     
     .profile-image {
-        width: 280px;
-        height: 280px;
+        width: 400px;
+        height: 400px;
     }
     
     .page-section {
