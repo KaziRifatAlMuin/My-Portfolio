@@ -1,0 +1,18 @@
+Kazi Rifat Al Muin
+Competitive Programmer & Software Developer
+
+Email: contact@rifatalmuin.com
+Location: Khulna, Bangladesh
+Phone: +880 1793 299246
+
+Summary:
+CSE student at KUET. Competitive programmer with Specialist rating on Codeforces and 1500+ problems solved. Experienced with C/C++, Java, JavaScript, ASP.NET, Laravel, SQL Server, MySQL, and web development.
+
+Projects:
+- CodeQuest (PHP Laravel) - Competitive Programming Enhancer
+- VaultX (ASP.NET WebForm) - Online Banking System
+- Portfolio (ASP.NET) - Dynamic Portfolio Website
+- Campus Bazar, Numerical Methods, Code Drive
+
+Education:
+Bachelor of Science in Computer Science and Engineering - KUET

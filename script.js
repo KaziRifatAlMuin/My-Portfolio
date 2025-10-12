@@ -136,13 +136,39 @@ const observer = new IntersectionObserver((entries) => {
     });
 }, observerOptions);
 
-// Observe all animated elements
-document.querySelectorAll('.overview-card, .about-card, .skill-category, .project-card, .timeline-item, .stat-item, .info-card').forEach(el => {
+// Observe all animated elements (exclude overview-card from staggered entrance to avoid blinking)
+document.querySelectorAll('.about-card, .skill-category, .project-card, .timeline-item, .stat-item, .info-card').forEach(el => {
     el.style.opacity = '0';
     el.style.transform = 'translateY(30px)';
     el.style.transition = 'all 0.8s cubic-bezier(0.4, 0, 0.2, 1)';
     observer.observe(el);
 });
+
+// Reveal overview cards one-by-one when scrolled into view (gentle, non-blinking stagger)
+const overviewCards = Array.from(document.querySelectorAll('.overview-card'));
+if (overviewCards.length) {
+    const overviewObserver = new IntersectionObserver((entries, obs) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                // Determine the index of the card among all overview cards
+                const index = overviewCards.indexOf(entry.target);
+                // Stagger reveal slightly based on index
+                setTimeout(() => {
+                    entry.target.classList.add('visible');
+                }, Math.min(index * 150, 600)); // cap delay to 600ms
+
+                // Stop observing this card
+                obs.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.18 });
+
+    overviewCards.forEach(card => {
+        // Ensure initial hidden state (CSS handles this too)
+        card.classList.remove('visible');
+        overviewObserver.observe(card);
+    });
+}
 
 // Enhanced skill bar animation with glow effects
 function animateSkillBars(container) {
@@ -151,15 +177,9 @@ function animateSkillBars(container) {
         setTimeout(() => {
             const width = bar.getAttribute('data-width');
             bar.style.width = width;
-
-            // Add pulsing glow effect
-            setTimeout(() => {
-                bar.style.boxShadow = '0 0 20px rgba(0, 255, 255, 0.6)';
-                setTimeout(() => {
-                    bar.style.boxShadow = '0 0 10px rgba(0, 255, 255, 0.3)';
-                }, 300);
-            }, 1500);
-        }, index * 300);
+            // Keep progress simple and accessible: no persistent pulsing glow added here.
+            bar.style.boxShadow = '0 0 10px rgba(0, 255, 255, 0.3)';
+        }, index * 200);
     });
 }
 
@@ -424,7 +444,7 @@ function animateCounter(element, target, startValue = 0, direction = 'up', prefi
         if (direction === 'down') {
             element.textContent = prefix + displayValue + suffix;
         } else {
-            if (target >= 1000) {
+            if (target >= 5) {
                 element.textContent = displayValue + '+';
             } else {
                 element.textContent = displayValue + suffix;
@@ -715,3 +735,48 @@ function hidePopup() {
 
 // Global functions: expose only hidePopup
 window.hidePopup = hidePopup;
+
+// Download CV handler: try to fetch PDF at the href, if not available create a TXT fallback
+document.addEventListener('DOMContentLoaded', () => {
+    const downloadBtn = document.getElementById('downloadCV');
+    if (!downloadBtn) return;
+
+    downloadBtn.addEventListener('click', async (e) => {
+        e.preventDefault();
+        const url = downloadBtn.getAttribute('href');
+        const suggestedName = downloadBtn.getAttribute('download') || 'KaziRifatAlMuin_CV.pdf';
+
+        try {
+            // Try to fetch the PDF
+            const res = await fetch(url, { method: 'GET' });
+            if (res.ok) {
+                const blob = await res.blob();
+                const a = document.createElement('a');
+                a.href = URL.createObjectURL(blob);
+                a.download = suggestedName;
+                document.body.appendChild(a);
+                a.click();
+                a.remove();
+                URL.revokeObjectURL(a.href);
+                return;
+            }
+            // Otherwise fall back to text CV
+        } catch (err) {
+            // network error or CORS - fall back
+            console.warn('CV fetch failed, falling back to TXT CV:', err);
+        }
+
+        // Fallback: generate a simple text CV and download
+        const fallbackText = `Kazi Rifat Al Muin\nCompetitive Programmer & Software Developer\n\nEmail: rifatalmuin.cse@gmail.com\nLocation: Khulna, Bangladesh\nPhone: +880 1793 299246\n\nSummary:\nCSE student at KUET. Competitive programmer with Specialist rating on Codeforces and 1500+ problems solved. Experienced with C/C++, Java, JavaScript, ASP.NET, Laravel, SQL Server, MySQL, and web development.\n\nProjects:\n- CodeQuest (PHP Laravel) - Competitive Programming Enhancer\n- VaultX (ASP.NET WebForm) - Online Banking System\n- Portfolio (ASP.NET) - Dynamic Portfolio Website\n- Campus Bazar, Numerical Methods, Code Drive\n\nEducation:\nBachelor of Science in Computer Science and Engineering - KUET\n`;
+
+        const blob = new Blob([fallbackText], { type: 'text/plain' });
+        const a = document.createElement('a');
+        a.href = URL.createObjectURL(blob);
+        a.download = 'KaziRifatAlMuin_CV.txt';
+        document.body.appendChild(a);
+        a.click();
+        a.remove();
+        URL.revokeObjectURL(a.href);
+        showPopup('Original PDF not available — downloaded a fallback TXT CV.', 'error');
+    });
+});

@@ -15,6 +15,8 @@ body {
     line-height: 1.6;
     min-height: 100vh;
     overflow-x: hidden;
+    padding: 0;
+    margin: 0;
 }
 
 /* Ensure images are responsive */
@@ -40,6 +42,12 @@ img {
     z-index: 1000;
     transition: all 0.3s ease;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+@media (min-width: 1280px) {
+    .navbar {
+        padding: 1rem 3rem;
+    }
 }
 
     .navbar:hover {
@@ -124,6 +132,19 @@ img {
 .main-content {
     margin-top: 80px;
     min-height: calc(100vh - 160px);
+    padding: 0 1rem;
+}
+
+@media (min-width: 768px) {
+    .main-content {
+        padding: 0 2rem;
+    }
+}
+
+@media (min-width: 1280px) {
+    .main-content {
+        padding: 0 3rem;
+    }
 }
 
 /* Enhanced Counter Animation */
@@ -186,7 +207,7 @@ img {
 
 /* Hero Section */
 .hero {
-    padding: 4rem 2rem;
+    padding: 4rem 1rem;
     min-height: 80vh;
     display: flex;
     align-items: center;
@@ -196,10 +217,12 @@ img {
 .hero-content {
     max-width: 1200px;
     margin: 0 auto;
+    width: 100%;
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 4rem;
     align-items: center;
+    padding: 0 1rem;
 }
 
 .hero-left {
@@ -214,7 +237,7 @@ img {
 }
 
 .hero-title .name {
-    font-size: 3rem;
+    font-size: 2.6rem;
     font-weight: 700;
     display: block;
     margin: 0.5rem 0;
@@ -396,7 +419,7 @@ img {
 
 /* Overview Section */
 .overview {
-    padding: 4rem 2rem;
+    padding: 4rem 1rem;
     background: linear-gradient(180deg, rgba(14, 15, 43, 0.9) 0%, rgba(16, 7, 43, 0.7) 100%);
 }
 
@@ -406,6 +429,7 @@ img {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 2rem;
+    padding: 0 1rem;
 }
 
 .overview-card {
@@ -421,20 +445,31 @@ img {
     overflow: hidden;
 }
 
+/* Start hidden for staggered reveal */
+.overview-card {
+    opacity: 0;
+    transform: translateY(18px);
+    will-change: opacity, transform;
+}
+
+.overview-card.visible {
+    opacity: 1;
+    transform: translateY(0);
+    transition: opacity 520ms cubic-bezier(0.2, 0.8, 0.2, 1), transform 520ms cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
     .overview-card::before {
+        /* Decorative overlay - keep static to avoid blinking */
         content: '';
         position: absolute;
         top: 0;
         left: 0;
         width: 100%;
         height: 100%;
-        background: linear-gradient(45deg, transparent, rgba(0, 255, 255, 0.05), transparent);
-        opacity: 0;
-        transition: opacity 0.4s ease;
-    }
-
-    .overview-card:hover::before {
+        background: linear-gradient(45deg, transparent, rgba(0, 255, 255, 0.03), transparent);
         opacity: 1;
+        transition: none; /* Disable transition to avoid blink */
+        pointer-events: none;
     }
 
     .overview-card:hover {
@@ -470,7 +505,7 @@ img {
 
 /* Stats Section */
 .stats {
-    padding: 4rem 2rem;
+    padding: 4rem 1rem;
     background: linear-gradient(135deg, rgba(16, 7, 43, 0.6) 0%, rgba(14, 15, 43, 0.8) 100%);
     border-top: 1px solid rgba(0, 255, 255, 0.1);
     border-bottom: 1px solid rgba(0, 255, 255, 0.1);
@@ -494,6 +529,7 @@ img {
     margin: 0 auto;
     position: relative;
     z-index: 1;
+    padding: 0 1rem;
 }
 
 .stats-title {
@@ -656,13 +692,17 @@ img {
     .stats-grid {
         grid-template-columns: 1fr;
         gap: 1rem;
+        width: 100%;
+        padding: 0 1rem;
     }
-    
+
     .stat-item {
-        max-width: 280px;
-        margin: 0 auto;
+        max-width: none;
+        width: 100%;
+        margin: 0;
         min-height: 120px;
-        padding: 1.2rem 1rem;
+        padding: 1rem 0.8rem;
+        box-sizing: border-box;
     }
     
     .stat-number {
@@ -723,9 +763,10 @@ img {
 
 /* Page Sections */
 .page-section {
-    padding: 6rem 2rem 4rem;
+    padding: 6rem 1rem 4rem;
     max-width: 1200px; 
     margin: 0 auto;
+    width: 100%;
     background: linear-gradient(135deg, rgba(14, 15, 43, 0.95) 0%, rgba(16, 7, 43, 0.9) 100%);
     min-height: 100vh;
 }
@@ -794,8 +835,24 @@ img {
 /* Skills Page with Enhanced Hover Animation */
 .skills-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
     gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+@media (min-width: 768px) {
+    .skills-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Large screens: show skills in 3 columns for wider viewports */
+@media (min-width: 1280px) {
+    .skills-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
 }
 
 .skill-category {
@@ -937,8 +994,23 @@ img {
 /* Projects Page */
 .projects-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
     gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+@media (min-width: 1024px) {
+    .projects-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+    .projects-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
 }
 
 .project-card {
@@ -1036,6 +1108,7 @@ img {
 .education-timeline {
     max-width: 800px;
     margin: 0 auto;
+    padding: 0 1rem;
 }
 
 .timeline-item {
@@ -1113,6 +1186,16 @@ img {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 3rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+@media (max-width: 968px) {
+    .contact-content {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
 }
 
 .contact-info {
@@ -1212,10 +1295,18 @@ img {
 
 /* Social Section - Static with Hover Only */
 .social {
-    padding: 3rem 2rem;
+    padding: 3rem 1rem;
     text-align: center;
     color: #e1e5f2;
     background: linear-gradient(180deg, rgba(16, 7, 43, 0.7) 0%, rgba(14, 15, 43, 0.9) 100%);
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+@media (min-width: 768px) {
+    .social {
+        padding: 3rem 2rem;
+    }
 }
 
 .social h3 {
@@ -1276,6 +1367,7 @@ img {
     max-width: 1200px;
     margin-left: auto;
     margin-right: auto;
+    padding: 0 1rem;
 }
 
 .info-card {
@@ -1367,6 +1459,7 @@ img {
     max-width: 900px;
     margin: 0 auto;
     position: relative;
+    padding: 0 1rem;
 }
 
 .photo-display {
@@ -1800,7 +1893,7 @@ img {
     }
 
     .hero-title .name {
-        font-size: 2.5rem;
+        font-size: 2.2em;
     }
 
     .hero-subtitle {
@@ -1964,7 +2057,7 @@ img {
     }
 
     .hero-title .name {
-        font-size: 2rem;
+        font-size: 0.8rem;
     }
 
     .hero-subtitle {
@@ -2092,10 +2185,11 @@ img {
         height: 45px;
     }
 
-    /* Side Navigation for very small screens */
+    /* Side Navigation for very small screens - do not occupy full screen */
     .side-nav {
-        width: 100%;
-        left: -100%;
+        width: 70%; /* use 60-70% based on preference; 70% chosen for better spacing */
+        max-width: 420px; /* cap width on wider small screens */
+        left: -70%; /* slide out of view by the same percentage used for width */
     }
 
     .side-nav-links a {
@@ -2107,7 +2201,7 @@ img {
 /* Extra small devices */
 @media (max-width: 360px) {
     .hero-title .name {
-        font-size: 1.8rem;
+        font-size: 0.5rem;
     }
 
     .profile-image {
@@ -2157,11 +2251,207 @@ img {
     }
 
     .hero-title .name {
-        font-size: 3.5rem;
+        font-size: 2.8rem;
     }
 
     .profile-image {
         width: 350px;
         height: 350px;
+    }
+    
+    .hero {
+        padding: 6rem 3rem;
+    }
+    
+    .page-section {
+        padding: 7rem 3rem 5rem;
+    }
+}
+
+/* Medium to Large Laptops (14" FHD and similar) - 1366px to 1920px */
+@media (min-width: 1280px) and (max-width: 1920px) {
+    body {
+        padding: 0 2rem;
+    }
+    
+    .hero {
+        padding: 5rem 3rem;
+        min-height: 85vh;
+    }
+    
+    .hero-content {
+        max-width: 1280px;
+        gap: 3rem;
+        padding: 0 2rem;
+    }
+    
+    .hero-left {
+        padding-right: 2rem;
+    }
+    
+    .hero-title .greeting {
+        font-size: 1.6rem;
+    }
+    
+    .hero-title .name {
+        font-size: 2.7rem;
+        line-height: 1.2;
+    }
+    
+    .hero-subtitle {
+        font-size: 1.4rem;
+    }
+    
+    .hero-description {
+        font-size: 1.15rem;
+        line-height: 1.7;
+        max-width: 90%;
+    }
+    
+    .profile-image {
+        width: 320px;
+        height: 320px;
+    }
+    
+    .page-section {
+        max-width: 1280px;
+        padding: 6rem 3rem 4rem;
+    }
+    
+    .navbar {
+        padding: 1rem 3rem;
+    }
+    
+    .overview,
+    .stats {
+        padding: 4rem 3rem;
+    }
+    
+    .overview-grid,
+    .stats-grid {
+        max-width: 1280px;
+    }
+    
+    .projects-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 2rem;
+    }
+}
+
+/* Specific for 14" FHD Laptop (1920x1080) */
+@media (min-width: 1920px) {
+    .hero-content {
+        max-width: 1400px;
+        padding: 0 3rem;
+    }
+    
+    .hero-title .name {
+        font-size: 3rem;
+    }
+    
+    .profile-image {
+        width: 360px;
+        height: 360px;
+    }
+    
+    .page-section {
+        max-width: 1400px;
+    }
+}
+
+/* Tablets and smaller laptops */
+@media (max-width: 1024px) {
+    body {
+        padding: 0 1rem;
+    }
+    
+    .hero {
+        padding: 3rem 1.5rem;
+    }
+    
+    .hero-content {
+        gap: 2rem;
+        padding: 0 1rem;
+    }
+    
+    .hero-title .name {
+        font-size: 2.5rem;
+    }
+    
+    .profile-image {
+        width: 280px;
+        height: 280px;
+    }
+    
+    .page-section {
+        padding: 5rem 1.5rem 3rem;
+    }
+    
+    .navbar {
+        padding: 1rem 1.5rem;
+    }
+}
+
+/* Mobile landscape and small tablets */
+
+/* @media (max-width: 768px) {
+    .hero {
+        padding: 3rem 1rem;
+        min-height: auto;
+    }
+
+    .hero-content {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+        padding: 0 1rem;
+        align-items: center;
+    }
+
+    .hero-title .name {
+        font-size: clamp(1.6rem, 6vw, 2.2rem);
+    }
+
+    .hero-subtitle,
+    .hero-description {
+        text-align: center;
+        margin-left: auto;
+        margin-right: auto;
+        max-width: 95%;
+    }
+
+    .profile-image {
+        width: 240px;
+        height: 240px;
+        margin: 0 auto;
+    }
+
+    .hero-buttons {
+        justify-content: center;
+    }
+}
+
+/* Small phones */
+@media (max-width: 480px) {
+    .hero {
+        padding: 2rem 0.8rem;
+        min-height: auto;
+    }
+
+    .hero-content {
+        gap: 1rem;
+    }
+
+    .hero-title .name {
+        font-size: clamp(1rem, 5.5vw, 1.6rem);
+        line-height: 1.05;
+    }
+
+    .profile-image {
+        width: 180px;
+        height: 180px;
+    }
+
+    .hero-buttons {
+        width: 100%;
     }
 }
