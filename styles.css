@@ -64,6 +64,9 @@ img {
 .nav-logo {
     height: 50px; /* Increased from 40px to 50px */
     width: auto;
+    max-width: 50px;
+    max-height: 50px;
+    object-fit: contain;
     filter: brightness(0) saturate(100%) invert(66%) sepia(94%) saturate(2066%) hue-rotate(140deg) brightness(104%) contrast(101%);
     transition: filter 0.3s ease; /* Only transition filter, transform is handled by JS */
 }
@@ -1702,6 +1705,9 @@ img {
 .side-nav-logo-img {
     height: 42px; /* Increased from 35px to 42px */
     width: auto;
+    max-width: 42px;
+    max-height: 42px;
+    object-fit: contain;
     filter: brightness(0) saturate(100%) invert(66%) sepia(94%) saturate(2066%) hue-rotate(140deg) brightness(104%) contrast(101%);
     /* Transition handled by JavaScript */
 }
@@ -1817,6 +1823,8 @@ img {
     /* Slightly smaller logo on mobile */
     .nav-logo {
         height: 45px;
+        max-width: 45px;
+        max-height: 45px;
     }
     
     /* Hide Follow Me on mobile */
@@ -2032,10 +2040,14 @@ img {
     
     .nav-logo {
         height: 38px; /* Slightly smaller for very small screens */
+        max-width: 38px;
+        max-height: 38px;
     }
     
     .side-nav-logo-img {
         height: 35px; /* Slightly smaller in side nav */
+        max-width: 35px;
+        max-height: 35px;
     }
 
     .hero {

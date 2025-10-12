@@ -68,6 +68,10 @@ window.addEventListener('scroll', () => {
     const navbar = document.querySelector('.navbar');
     const logo = document.querySelector('.nav-logo');
     const sideNavLogo = document.querySelector('.side-nav-logo-img');
+    
+    // Defensive check: Exit if elements don't exist yet
+    if (!navbar || !logo) return;
+    
     const currentScrollY = window.scrollY;
     const scrollDifference = Math.abs(currentScrollY - lastScrollY);
     
@@ -89,12 +93,12 @@ window.addEventListener('scroll', () => {
         const direction = (currentScrollY - lastScrollY) > 0 ? 1 : -1; // Scroll direction
         const targetRotation = logoRotation + (direction * rotations * 360);
         
-        // Apply smooth rotation with CSS transition
-        if (logo) {
+        // Apply smooth rotation with CSS transition - with defensive checks
+        if (logo && logo.style) {
             logo.style.transition = 'transform 1.5s cubic-bezier(0.25, 0.46, 0.45, 0.94)';
             logo.style.transform = `rotate(${targetRotation}deg)`;
         }
-        if (sideNavLogo) {
+        if (sideNavLogo && sideNavLogo.style) {
             sideNavLogo.style.transition = 'transform 1.5s cubic-bezier(0.25, 0.46, 0.45, 0.94)';
             sideNavLogo.style.transform = `rotate(${targetRotation}deg)`;
         }
