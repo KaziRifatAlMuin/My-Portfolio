@@ -59,6 +59,9 @@ img {
     display: flex;
     align-items: center;
     gap: 0.8rem;
+    position: relative;
+    overflow: hidden;
+    max-height: 60px;
 }
 
 .nav-logo {
@@ -66,9 +69,17 @@ img {
     width: auto;
     max-width: 50px;
     max-height: 50px;
+    min-width: 50px;
+    min-height: 50px;
     object-fit: contain;
     filter: brightness(0) saturate(100%) invert(66%) sepia(94%) saturate(2066%) hue-rotate(140deg) brightness(104%) contrast(101%);
     transition: filter 0.3s ease; /* Only transition filter, transform is handled by JS */
+    /* Prevent transform issues on mobile */
+    transform-origin: center center;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+    display: block;
+    flex-shrink: 0;
 }
 
 .nav-logo:hover {
@@ -1700,6 +1711,9 @@ img {
     display: flex;
     align-items: center;
     gap: 0.8rem;
+    position: relative;
+    overflow: hidden;
+    max-height: 50px;
 }
 
 .side-nav-logo-img {
@@ -1707,9 +1721,17 @@ img {
     width: auto;
     max-width: 42px;
     max-height: 42px;
+    min-width: 42px;
+    min-height: 42px;
     object-fit: contain;
     filter: brightness(0) saturate(100%) invert(66%) sepia(94%) saturate(2066%) hue-rotate(140deg) brightness(104%) contrast(101%);
     /* Transition handled by JavaScript */
+    /* Prevent transform issues on mobile */
+    transform-origin: center center;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+    display: block;
+    flex-shrink: 0;
 }
 
 .side-nav-logo .brand-text {
