@@ -1,58 +1,328 @@
-﻿<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    
-    <!-- SEO Meta Tags -->
+
     <title>Kazi Rifat Al Muin | Competitive Programmer</title>
-    <meta name="description" content="Kazi Rifat Al Muin - CSE student at KUET, Competitive Programmer with Specialist rating on Codeforces, 2000+ problems solved. ICPC Dhaka Regional 2024 participant with strong algorithmic problem-solving skills.">
-    <meta name="keywords" content="Kazi Rifat Al Muin, Rifat Al Muin, KaziRifatAlMuin, competitive programming, codeforces specialist, KUET CSE, software developer, web developer, C++ programmer, Java developer, algorithm expert, ICPC contestant, programming portfolio, Bangladesh programmer">
+    <meta name="description" content="Kazi Rifat Al Muin - CSE student at KUET, competitive programmer with 2000+ problems solved, Codeforces Specialist, CodeChef 3-Star, and full-stack developer.">
+    <meta name="keywords" content="Kazi Rifat Al Muin, Rifat Al Muin, competitive programming, codeforces specialist, KUET CSE, software developer, web developer, C++ programmer, Java developer, algorithm expert, ICPC contestant, programming portfolio, Bangladesh programmer">
     <meta name="author" content="Kazi Rifat Al Muin">
     <meta name="robots" content="index, follow">
-    <meta name="language" content="English">
-    <meta name="revisit-after" content="7 days">
-    
-    <!-- Open Graph / Facebook Meta Tags -->
+    <link rel="canonical" href="https://rifatalmuin.com/">
+
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://rifatalmuin.com/">
     <meta property="og:title" content="Kazi Rifat Al Muin - Competitive Programmer & Developer">
-    <meta property="og:description" content="CSE student at KUET | Codeforces Specialist | 2000+ Problems Solved | ICPC Dhaka Regional 2024 participant">
+    <meta property="og:description" content="CSE student at KUET | Codeforces Specialist | CodeChef 3-Star | 2000+ problems solved">
     <meta property="og:image" content="https://rifatalmuin.com/images/weblogo.png">
-    <meta property="og:image:width" content="1200">
-    <meta property="og:image:height" content="630">
     <meta property="og:image:alt" content="Kazi Rifat Al Muin Portfolio Logo">
-    <meta property="og:locale" content="en_US">
     <meta property="og:site_name" content="Kazi Rifat Al Muin Portfolio">
-    
-    <!-- Twitter Card Meta Tags -->
+
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:url" content="https://rifatalmuin.com/">
     <meta name="twitter:title" content="Kazi Rifat Al Muin - Competitive Programmer & Developer">
-    <meta name="twitter:description" content="CSE student at KUET | Codeforces Specialist | 2000+ Problems Solved | ICPC participant">
+    <meta name="twitter:description" content="CSE student at KUET | Codeforces Specialist | CodeChef 3-Star | 2000+ problems solved">
     <meta name="twitter:image" content="https://rifatalmuin.com/images/weblogo.png">
-    <meta name="twitter:image:alt" content="Kazi Rifat Al Muin Portfolio Logo">
-    
-    <!-- Canonical URL -->
-    <link rel="canonical" href="https://rifatalmuin.com/">
-    
-    <!-- Favicon -->
-    <link rel="icon" type="image/x-icon" href="favicon.ico">
-    <link rel="icon" type="image/x-icon" href="images/weblogo.png">
+
     <link rel="icon" type="image/png" href="images/weblogo.png">
-    <link rel="apple-touch-icon" sizes="180x180" href="images/weblogo.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="images/weblogo.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="images/weblogo.png">
-    <link rel="shortcut icon" type="image/x-icon" href="images/weblogo.png">
-    <link rel="manifest" href="site.webmanifest">
-    
-    <!-- Fonts and Styles -->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
+    <link rel="apple-touch-icon" href="images/weblogo.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
-    
-    <!-- Structured Data / JSON-LD for SEO -->
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'system-ui', 'sans-serif'],
+                        display: ['Space Grotesk', 'Inter', 'system-ui', 'sans-serif']
+                    },
+                    colors: {
+                        ink: '#08111f',
+                        panel: '#0e1b2f',
+                        line: 'rgba(148, 163, 184, 0.18)'
+                    },
+                    boxShadow: {
+                        glow: '0 24px 80px rgba(34, 211, 238, 0.18)'
+                    }
+                }
+            }
+        };
+    </script>
+    <style>
+        :root {
+            color-scheme: dark;
+        }
+
+        body {
+            font-family: "Times New Roman", Times, serif !important;
+            background:
+                radial-gradient(circle at 12% 5%, rgba(20, 184, 166, 0.16), transparent 34rem),
+                radial-gradient(circle at 88% 8%, rgba(99, 102, 241, 0.14), transparent 32rem),
+                linear-gradient(180deg, #08111f 0%, #0b1424 42%, #07101d 100%);
+        }
+
+        #scrollProgress {
+            position: fixed;
+            inset: 0 auto auto 0;
+            z-index: 80;
+            height: 3px;
+            width: 0;
+            background: linear-gradient(90deg, #67e8f9, #6ee7b7, #c4b5fd);
+            box-shadow: 0 0 24px rgba(103, 232, 249, 0.55);
+            transition: width 120ms linear;
+        }
+
+        .brand-logo {
+            width: 4rem;
+            height: 4rem;
+            filter: drop-shadow(0 0 18px rgba(103, 232, 249, 0.32));
+        }
+
+        .typing-line {
+            min-height: 6rem;
+            overflow-wrap: anywhere;
+        }
+
+        @media (min-width: 640px) {
+            .typing-line {
+                min-height: 5rem;
+            }
+        }
+
+        @media (max-width: 640px) {
+            html,
+            body {
+                max-width: 100%;
+                overflow-x: hidden;
+            }
+
+            header nav {
+                width: calc(100vw - 2rem) !important;
+                position: relative;
+            }
+
+            #mobileMenuButton {
+                display: inline-flex !important;
+                flex: 0 0 auto;
+                margin-left: auto;
+                position: fixed;
+                right: 1rem;
+                top: 1.85rem;
+                z-index: 90;
+                background: rgba(8, 17, 31, 0.92);
+                box-shadow: 0 0 22px rgba(103, 232, 249, 0.16);
+                color: #67e8f9;
+            }
+
+            .menu-glyph {
+                display: block !important;
+                font-size: 1.4rem;
+                line-height: 1;
+            }
+
+            .hamburger-lines {
+                display: none !important;
+            }
+
+            .typing-line {
+                font-size: 1.08rem;
+                line-height: 1.85;
+            }
+        }
+
+        .mobile-floating-menu {
+            position: fixed;
+            right: 1rem;
+            top: 1.85rem;
+            z-index: 95;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            min-width: 3.25rem;
+            height: 2.75rem;
+            border-radius: 0.85rem;
+            border: 1px solid rgba(103, 232, 249, 0.35);
+            background: rgba(8, 17, 31, 0.96);
+            color: #67e8f9;
+            font-size: 0.78rem;
+            font-weight: 700;
+            letter-spacing: 0.08em;
+            box-shadow: 0 0 24px rgba(103, 232, 249, 0.2);
+        }
+
+        @media (min-width: 1024px) {
+            .mobile-floating-menu {
+                display: none;
+            }
+        }
+
+        @media (max-width: 1023px) {
+            .mobile-floating-menu {
+                display: inline-flex;
+            }
+
+            #mobileMenuButton {
+                display: none !important;
+            }
+        }
+
+        .noise-layer {
+            background-image: linear-gradient(rgba(255, 255, 255, 0.035) 1px, transparent 1px), linear-gradient(90deg, rgba(255, 255, 255, 0.035) 1px, transparent 1px);
+            background-size: 48px 48px;
+            mask-image: linear-gradient(to bottom, black, transparent 72%);
+        }
+
+        .reveal {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .reveal-ready .reveal {
+            opacity: 0;
+            transform: translateY(24px);
+            transition: opacity 700ms ease, transform 700ms ease;
+        }
+
+        .reveal-ready .reveal.is-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .photo-slot {
+            transition: opacity 350ms ease, transform 350ms ease;
+        }
+
+        .photo-slot.fade-out {
+            opacity: 0.45;
+            transform: scale(0.96);
+        }
+
+        .section-shell {
+            position: relative;
+        }
+
+        .section-shell::before {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: -12px;
+            width: 92px;
+            height: 1px;
+            background: linear-gradient(90deg, #67e8f9, transparent);
+            box-shadow: 0 0 22px rgba(103, 232, 249, 0.45);
+        }
+
+        .section-title {
+            text-wrap: balance;
+            text-shadow: 0 0 30px rgba(103, 232, 249, 0.12);
+        }
+
+        .typing-caret {
+            display: inline-block;
+            color: #67e8f9;
+            animation: caretBlink 780ms steps(1) infinite;
+        }
+
+        @keyframes caretBlink {
+            50% { opacity: 0; }
+        }
+
+        .portrait-card {
+            transform: perspective(1200px) rotateX(0) rotateY(0);
+            transition: transform 420ms ease, border-color 420ms ease, box-shadow 420ms ease;
+        }
+
+        .portrait-card:hover {
+            transform: perspective(1200px) rotateX(1.5deg) rotateY(-2deg) translateY(-6px);
+            border-color: rgba(103, 232, 249, 0.38);
+            box-shadow: 0 36px 110px rgba(34, 211, 238, 0.2);
+        }
+
+        .tech-scan {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .tech-scan::after {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(115deg, transparent 0%, rgba(255,255,255,0.13) 44%, transparent 58%);
+            transform: translateX(-130%);
+            transition: transform 850ms ease;
+            pointer-events: none;
+        }
+
+        .tech-scan:hover::after {
+            transform: translateX(130%);
+        }
+
+        .skill-category {
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 1.5rem;
+            background: linear-gradient(135deg, rgba(255,255,255,0.065), rgba(255,255,255,0.025));
+            padding: 1.25rem;
+            box-shadow: 0 22px 70px rgba(0,0,0,0.16);
+        }
+
+        .skill-category h3 {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.65rem;
+        }
+
+        .skill-category h3::before {
+            content: "";
+            width: 0.7rem;
+            height: 0.7rem;
+            border-radius: 999px;
+            background: #67e8f9;
+            box-shadow: 0 0 20px rgba(103, 232, 249, 0.8);
+        }
+
+        .skill-card,
+        .project-card,
+        .magnetic-hover {
+            transform-style: preserve-3d;
+        }
+
+        .skill-card {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .skill-card::after {
+            content: "";
+            position: absolute;
+            inset: auto 18% 0;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, #67e8f9, transparent);
+            transform: scaleX(0);
+            transition: transform 280ms ease;
+        }
+
+        .skill-card:hover::after {
+            transform: scaleX(1);
+        }
+
+        .menu-glyph {
+            display: none;
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            *, ::before, ::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                scroll-behavior: auto !important;
+                transition-duration: 0.01ms !important;
+            }
+        }
+    </style>
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -62,666 +332,751 @@
       "url": "https://rifatalmuin.com/",
       "image": "https://rifatalmuin.com/images/profile.jpg",
       "jobTitle": "Competitive Programmer & Software Developer",
-      "worksFor": {
-        "@type": "Organization",
-        "name": "KUET"
-      },
-      "alumniOf": {
-        "@type": "Organization",
-        "name": "Khulna University of Engineering & Technology"
-      },
-      "description": "CSE student at KUET specializing in competitive programming with 2000+ problems solved and Specialist rating on Codeforces",
+      "alumniOf": { "@type": "Organization", "name": "Khulna University of Engineering & Technology" },
       "sameAs": [
         "https://github.com/KaziRifatAlMuin",
         "https://linkedin.com/in/rifatalmuin",
         "https://codeforces.com/profile/RifatALmuiN",
-        "https://facebook.com/rifatalmuin21"
+        "https://www.codechef.com/users/rifatalmuin"
       ],
       "knowsAbout": ["Competitive Programming", "C++", "Java", "JavaScript", "Algorithms", "Data Structures", "Web Development"],
-      "email": "rifatalmuin.cse@gmail.com"
+      "email": "kazirifatalmuin246@gmail.com"
     }
     </script>
 </head>
-<body>
-    <!-- Navigation -->
-    <nav class="navbar" role="navigation" aria-label="Main navigation">
-        <div class="nav-brand">
-            <img src="images/logo.png" alt="Kazi Rifat Al Muin Logo" class="nav-logo">
+<body class="min-h-screen overflow-x-hidden font-sans text-slate-200 antialiased">
+    <div id="scrollProgress" aria-hidden="true"></div>
+    <div class="noise-layer pointer-events-none fixed inset-0 z-0"></div>
+
+    <header class="fixed inset-x-0 top-0 z-50 px-4 pt-4">
+        <nav id="navbar" class="mx-auto flex max-w-7xl items-center justify-between rounded-2xl border border-white/10 bg-ink/70 px-4 py-3 shadow-2xl shadow-black/20 backdrop-blur-xl transition-all duration-300 sm:px-6" aria-label="Main navigation">
+            <a href="#home" class="flex items-center gap-3 text-cyan-300" aria-label="Go to home">
+                <img src="images/logo.png" alt="Kazi Rifat Al Muin logo" class="brand-logo rounded-2xl border border-cyan-300/20 bg-cyan-300/10 object-contain p-1.5 shadow-glow">
+            </a>
+
+            <div class="hidden items-center gap-1 rounded-full border border-white/10 bg-white/[0.04] p-1 lg:flex">
+                <a class="nav-link rounded-full px-4 py-2 text-sm font-semibold text-slate-300 transition hover:bg-white/10 hover:text-white" href="#home">Home</a>
+                <a class="nav-link rounded-full px-4 py-2 text-sm font-semibold text-slate-300 transition hover:bg-white/10 hover:text-white" href="#about">About</a>
+                <a class="nav-link rounded-full px-4 py-2 text-sm font-semibold text-slate-300 transition hover:bg-white/10 hover:text-white" href="#skills">Skills</a>
+                <a class="nav-link rounded-full px-4 py-2 text-sm font-semibold text-slate-300 transition hover:bg-white/10 hover:text-white" href="#projects">Projects</a>
+                <a class="nav-link rounded-full px-4 py-2 text-sm font-semibold text-slate-300 transition hover:bg-white/10 hover:text-white" href="#education">Education</a>
+                <a class="nav-link rounded-full px-4 py-2 text-sm font-semibold text-slate-300 transition hover:bg-white/10 hover:text-white" href="#contact">Contact</a>
+            </div>
+
+            <a href="Doccuments/Kazi_Rifat_Al_Muin_CV.pdf" target="_blank" rel="noopener" class="hidden rounded-full bg-cyan-300 px-5 py-2.5 text-sm font-bold text-ink shadow-lg shadow-cyan-500/20 transition hover:-translate-y-0.5 hover:bg-white md:inline-flex">View CV</a>
+
+            <button id="mobileMenuButton" class="inline-flex h-11 w-11 items-center justify-center rounded-xl border border-white/10 bg-white/[0.04] text-white lg:hidden" aria-label="Open mobile menu" aria-expanded="false">
+                <span class="menu-glyph" aria-hidden="true">☰</span>
+                <span class="hamburger-lines" aria-hidden="true">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </span>
+            </button>
+        </nav>
+
+        <div id="mobileMenu" class="pointer-events-none mx-auto mt-3 max-w-7xl translate-y-2 rounded-2xl border border-white/10 bg-ink/95 p-3 opacity-0 shadow-2xl backdrop-blur-xl transition duration-300 lg:hidden">
+            <div class="grid gap-1">
+                <a href="#home" class="mobile-link rounded-xl px-4 py-3 font-semibold text-slate-200 hover:bg-white/10"><i class="fa-solid fa-house mr-3 text-cyan-300"></i>Home</a>
+                <a href="#about" class="mobile-link rounded-xl px-4 py-3 font-semibold text-slate-200 hover:bg-white/10"><i class="fa-solid fa-user mr-3 text-cyan-300"></i>About</a>
+                <a href="#skills" class="mobile-link rounded-xl px-4 py-3 font-semibold text-slate-200 hover:bg-white/10"><i class="fa-solid fa-code mr-3 text-cyan-300"></i>Skills</a>
+                <a href="#projects" class="mobile-link rounded-xl px-4 py-3 font-semibold text-slate-200 hover:bg-white/10"><i class="fa-solid fa-layer-group mr-3 text-cyan-300"></i>Projects</a>
+                <a href="#education" class="mobile-link rounded-xl px-4 py-3 font-semibold text-slate-200 hover:bg-white/10"><i class="fa-solid fa-graduation-cap mr-3 text-cyan-300"></i>Education</a>
+                <a href="#contact" class="mobile-link rounded-xl px-4 py-3 font-semibold text-slate-200 hover:bg-white/10"><i class="fa-solid fa-envelope mr-3 text-cyan-300"></i>Contact</a>
+            </div>
         </div>
-        <div class="nav-links">
-            <a href="#home" aria-label="Navigate to Home section">Home</a>
-            <a href="#about" aria-label="Navigate to About section">About</a>
-            <a href="#skills" aria-label="Navigate to Skills section">Skills</a>
-            <a href="#projects" aria-label="Navigate to Projects section">Projects</a>
-            <a href="#education" aria-label="Navigate to Education section">Education</a>
-            <a href="#contact" aria-label="Navigate to Contact section">Contact</a>
-        </div>
-        <button class="hamburger" aria-label="Toggle mobile menu" aria-expanded="false">
-            <span></span>
-            <span></span>
-            <span></span>
-        </button>
-    </nav>
+    </header>
+    <button id="mobileMenuFloating" class="mobile-floating-menu" type="button" aria-label="Open mobile menu" aria-expanded="false">MENU</button>
 
-    <!-- Mobile Side Navigation -->
-    <nav class="side-nav" role="navigation" aria-label="Mobile navigation">
-        <div class="side-nav-header">
-            <div class="side-nav-logo">
-                <img src="images/logo.png" alt="Kazi Rifat Al Muin Logo" class="side-nav-logo-img">
-                <!-- <span class="brand-text">Rifat</span> -->
-            </div>
-            <button class="close-btn" aria-label="Close mobile menu">&times;</button>
-        </div>
-        <div class="side-nav-links">
-            <a href="#home" aria-label="Navigate to Home section"><i class="fas fa-home"></i> Home</a>
-            <a href="#about" aria-label="Navigate to About section"><i class="fas fa-user"></i> About</a>
-            <a href="#skills" aria-label="Navigate to Skills section"><i class="fas fa-code"></i> Skills</a>
-            <a href="#projects" aria-label="Navigate to Projects section"><i class="fas fa-project-diagram"></i> Projects</a>
-            <a href="#education" aria-label="Navigate to Education section"><i class="fas fa-graduation-cap"></i> Education</a>
-            <a href="#contact" aria-label="Navigate to Contact section"><i class="fas fa-envelope"></i> Contact</a>
-        </div>
-    </nav>
-    <div class="overlay" aria-hidden="true"></div>
-
-    <!-- Main Content -->
-    <main class="main-content">
-        <!-- Home Section -->
-        <section id="home" class="hero">
-            <div class="hero-content">
-                <div class="hero-left">
-                    <h1 class="hero-title">
-                        <span class="greeting">Hi, I'm</span>
-                        <span class="name">Kazi Rifat Al Muin</span>
-                    </h1>
-                    <h2 class="hero-subtitle">Competitive Programmer & Developer</h2>
-                    <p class="hero-description">
-                        Passionate CSE student at KUET specializing in algorithms, 
-                        data structures, and problem-solving with 2000+ problems solved.
-                    </p>
-                    <div class="hero-buttons">
-                        <a id="downloadCV" href="Doccuments/KaziRifatAlMuin_CV.pdf" class="btn btn-primary" download target="_blank" aria-label="Download CV">Download CV</a>
-                        <a href="#contact" class="btn btn-secondary">Get In Touch</a>
-                    </div>
+    <main class="relative z-10">
+        <section id="home" class="mx-auto grid min-h-screen max-w-7xl items-center gap-12 px-4 pb-20 pt-36 sm:px-6 lg:grid-cols-[1.05fr_0.95fr] lg:px-8">
+            <div class="reveal">
+                <div class="mb-6 inline-flex items-center gap-2 rounded-full border border-cyan-300/20 bg-cyan-300/10 px-4 py-2 text-sm font-semibold text-cyan-100">
+                    <span class="h-2 w-2 rounded-full bg-emerald-300"></span>
+                    KUET CSE student and competitive programmer
                 </div>
-                <div class="hero-right">
-                    <div class="profile-image">
-                        <img src="images/profile.jpg" alt="Kazi Rifat Al Muin - Competitive Programmer and Software Developer" class="hero-profile-pic" loading="eager" />
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Quick Overview Sections -->
-        <section class="overview">
-            <div class="overview-grid">
-                <div class="overview-card">
-                    <div class="card-icon">
-                        <i class="fas fa-user"></i>
-                    </div>
-                    <h3>About Me</h3>
-                    <p>CSE undergraduate at KUET with passion for competitive programming and software development.</p>
-                </div>
-                
-                <div class="overview-card">
-                    <div class="card-icon">
-                        <i class="fas fa-code"></i>
-                    </div>
-                    <h3>Skills</h3>
-                    <p>Expert in C/C++, Java, JavaScript. Strong foundation in algorithms and data structures.</p>
-                </div>
-                
-                <div class="overview-card">
-                    <div class="card-icon">
-                        <i class="fas fa-project-diagram"></i>
-                    </div>
-                    <h3>Projects</h3>
-                    <p>Campus Bazar, Numerical Methods, Code Drive, CodeQuest, VaultX, Portfolio and more.</p>
-                </div>
-                
-                <div class="overview-card">
-                    <div class="card-icon">
-                        <i class="fas fa-graduation-cap"></i>
-                    </div>
-                    <h3>Education</h3>
-                    <p>Currently pursuing Bachelor's in CSE at KUET. HSC from Govt. M.M. City College.</p>
-                </div>
-            </div>
-        </section>
-
-        <!-- Stats Section -->
-        <section class="stats">
-            <div class="stats-container">
-                <h2 class="stats-title">My Achievements</h2>
-                <div class="stats-grid">
-                    <div class="stat-item">
-                        <div class="stat-icon">
-                            <i class="fas fa-code"></i>
-                        </div>
-                        <span class="stat-number" data-count="2000">0</span>
-                        <span class="stat-label">Problems Solved</span>
-                    </div>
-                    <div class="stat-item">
-                        <div class="stat-icon">
-                            <i class="fas fa-project-diagram"></i>
-                        </div>
-                        <span class="stat-number" data-count="6">0</span>
-                        <span class="stat-label">Projects</span>
-                    </div>
-                    <div class="stat-item">
-                        <div class="stat-icon">
-                            <i class="fas fa-trophy"></i>
-                        </div>
-                        <span class="stat-number">Specialist</span>
-                        <span class="stat-label">Codeforces</span>
-                    </div>
-                    <div class="stat-item">
-                        <div class="stat-icon">
-                            <i class="fas fa-medal"></i>
-                        </div>
-                        <span class="stat-number" data-count="26" data-start="100" data-direction="down">Top 100</span>
-                        <span class="stat-label">IUPC Rank</span>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- About Section -->
-        <section id="about" class="page-section">
-            <div class="section-header">
-                <h1>About Me</h1>
-                <p>Get to know more about my journey and interests</p>
-            </div>
-
-            <!-- 4 Column Quick Info -->
-            <div class="about-quick-info">
-                <div class="info-card">
-                    <div class="info-icon">
-                        <i class="fas fa-user-circle"></i>
-                    </div>
-                    <h3>Who I Am</h3>
-                    <p>Passionate CSE student solving complex programming challenges daily</p>
-                </div>
-                
-                <div class="info-card">
-                    <div class="info-icon">
-                        <i class="fas fa-heart"></i>
-                    </div>
-                    <h3>What I Love</h3>
-                    <p>Competitive programming and building innovative software solutions together</p>
-                </div>
-                
-                <div class="info-card">
-                    <div class="info-icon">
-                        <i class="fas fa-bullseye"></i>
-                    </div>
-                    <h3>My Goals</h3>
-                    <p>Becoming skilled software engineer while excelling in programming</p>
-                </div>
-                
-                <div class="info-card">
-                    <div class="info-icon">
-                        <i class="fas fa-gamepad"></i>
-                    </div>
-                    <h3>Interests</h3>
-                    <p>Gaming, Cycling, Mentoring students and junior programmers and Watching Tech Videos</p>
-                </div>
-            </div>
-
-            <!-- Photo Gallery with Fixed 3-Photo Layout -->
-            <div class="photo-gallery">
-                <div class="gallery-header">
-                    <h2>My Journey</h2>
-                    <p>Glimpses from my programming and extra-curricular life</p>
-                </div>
-                <div class="gallery-container">
-                    <div class="photo-display">
-                        <!-- Always 3 visible photos -->
-                        <div class="photo-slot" id="photo-left">
-                            <div class="photo-circle">
-                                <img src="images/1.jpg" alt="Photo" class="gallery-image" />
-                            </div>
-                        </div>
-                        <div class="photo-slot center" id="photo-center">
-                            <div class="photo-circle">
-                                <img src="images/2.jpg" alt="Photo" class="gallery-image" />
-                            </div>
-                        </div>
-                        <div class="photo-slot" id="photo-right">
-                            <div class="photo-circle">
-                                <img src="images/3.jpg" alt="Photo" class="gallery-image" />
-                            </div>
-                        </div>
-                    </div>
-                    <div class="gallery-dots">
-                        <span class="dot active" data-index="0"></span>
-                        <span class="dot" data-index="1"></span>
-                        <span class="dot" data-index="2"></span>
-                        <span class="dot" data-index="3"></span>
-                        <span class="dot" data-index="4"></span>
-                        <span class="dot" data-index="5"></span>
-                        <span class="dot" data-index="6"></span>
-                        <span class="dot" data-index="7"></span>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Skills Section -->
-        <section id="skills" class="page-section">
-            <div class="section-header">
-                <h1>Technical Skills</h1>
-                <p>Technologies and tools I work with</p>
-            </div>
-
-            <div class="skills-grid">
-                <div class="skill-category">
-                    <div class="category-header">
-                        <i class="fas fa-code"></i>
-                        <h3>Programming Languages</h3>
-                    </div>
-                    <div class="skill-list">
-                        <div class="skill-item">
-                            <span class="skill-name">C/C++</span>
-                            <div class="skill-bar">
-                                <div class="skill-progress" data-width="90%"></div>
-                            </div>
-                        </div>
-                        <div class="skill-item">
-                            <span class="skill-name">Java</span>
-                            <div class="skill-bar">
-                                <div class="skill-progress" data-width="75%"></div>
-                            </div>
-                        </div>
-                        <div class="skill-item">
-                            <span class="skill-name">JavaScript</span>
-                            <div class="skill-bar">
-                                <div class="skill-progress" data-width="65%"></div>
-                            </div>
-                        </div>
-                        <div class="skill-item">
-                            <span class="skill-name">C#</span>
-                            <div class="skill-bar">
-                                <div class="skill-progress" data-width="60%"></div>
-                            </div>
-                        </div>
-                        <div class="skill-item">
-                            <span class="skill-name">PHP</span>
-                            <div class="skill-bar">
-                                <div class="skill-progress" data-width="70%"></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="skill-category">
-                    <div class="category-header">
-                        <i class="fas fa-trophy"></i>
-                        <h3>Competitive Programming</h3>
-                    </div>
-                    <div class="skill-list">
-                        <div class="skill-item">
-                            <span class="skill-name">Data Structures</span>
-                            <div class="skill-bar">
-                                <div class="skill-progress" data-width="95%"></div>
-                            </div>
-                        </div>
-                        <div class="skill-item">
-                            <span class="skill-name">Algorithms</span>
-                            <div class="skill-bar">
-                                <div class="skill-progress" data-width="90%"></div>
-                            </div>
-                        </div>
-                        <div class="skill-item">
-                            <span class="skill-name">Problem Solving</span>
-                            <div class="skill-bar">
-                                <div class="skill-progress" data-width="85%"></div>
-                            </div>
-                        </div>
-                        <div class="skill-item">
-                            <span class="skill-name">Dynamic Programming</span>
-                            <div class="skill-bar">
-                                <div class="skill-progress" data-width="80%"></div>
-                            </div>
-                        </div>
-                        <div class="skill-item">
-                            <span class="skill-name">Mathematics</span>
-                            <div class="skill-bar">
-                                <div class="skill-progress" data-width="90%"></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="skill-category">
-                    <div class="category-header">
-                        <i class="fas fa-tools"></i>
-                        <h3>Tools & Technologies</h3>
-                    </div>
-                    <div class="skill-list">
-                        <div class="skill-item">
-                            <span class="skill-name">Git & GitHub</span>
-                            <div class="skill-bar">
-                                <div class="skill-progress" data-width="80%"></div>
-                            </div>
-                        </div>
-                        <div class="skill-item">
-                            <span class="skill-name">Android Studio</span>
-                            <div class="skill-bar">
-                                <div class="skill-progress" data-width="85%"></div>
-                            </div>
-                        </div>
-                        <div class="skill-item">
-                            <span class="skill-name">ASP.NET</span>
-                            <div class="skill-bar">
-                                <div class="skill-progress" data-width="75%"></div>
-                            </div>
-                        </div>
-                        <div class="skill-item">
-                            <span class="skill-name">Laravel Framework</span>
-                            <div class="skill-bar">
-                                <div class="skill-progress" data-width="80%"></div>
-                            </div>
-                        </div>
-                         <div class="skill-item">
-                            <span class="skill-name">Bootstrap CSS</span>
-                            <div class="skill-bar">
-                                <div class="skill-progress" data-width="70%"></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Projects Section -->
-        <section id="projects" class="page-section">
-            <div class="section-header">
-                <h1>My Projects</h1>
-                <p>Some of my notable work and contributions</p>
-            </div>
-
-            <div class="projects-grid">
-                <div class="project-card">
-                    <div class="project-icon">
-                        <i class="fas fa-shopping-cart"></i>
-                    </div>
-                    <h3>Campus Bazar</h3>
-                    <p>An mobile application for online marketplace platform built using Android Studio, specifically designed for university students to buy and sell products within their campus community.</p>
-                    <div class="project-tech">
-                        <span class="tech-tag">Android</span>
-                        <span class="tech-tag">Java</span>
-                        <span class="tech-tag">Firebase</span>
-                    </div>
-                    <a href="https://github.com/KaziRifatAlMuin/Campus-Bazar_Ecommerce-App-Project" target="_blank" class="project-link">
-                        <i class="fab fa-github"></i> View Code
+                <h1 class="font-display text-4xl font-bold leading-tight text-white sm:text-6xl lg:text-7xl">
+                    Kazi Rifat<br>
+                    <span class="bg-gradient-to-r from-cyan-200 via-emerald-200 to-violet-200 bg-clip-text text-transparent">Al Muin</span>
+                </h1>
+                <p class="typing-line mt-6 max-w-2xl text-lg leading-8 text-slate-300 sm:text-xl" aria-live="polite">
+                    <span id="typingText">I solve algorithms and build polished full stack products.</span><span class="typing-caret">|</span>
+                </p>
+                <div class="mt-8 flex flex-col gap-3 sm:flex-row">
+                    <a href="#projects" class="magnetic-hover inline-flex items-center justify-center gap-2 rounded-full bg-cyan-300 px-6 py-3 font-bold text-ink shadow-glow transition hover:-translate-y-1 hover:bg-white">
+                        <i class="fa-solid fa-diagram-project"></i>
+                        View Projects
+                    </a>
+                    <a href="Doccuments/Kazi_Rifat_Al_Muin_CV.pdf" target="_blank" rel="noopener" class="magnetic-hover inline-flex items-center justify-center gap-2 rounded-full border border-white/15 bg-white/[0.06] px-6 py-3 font-bold text-white transition hover:-translate-y-1 hover:border-cyan-200/50 hover:bg-white/10">
+                        <i class="fa-solid fa-file-lines"></i>
+                        View CV
+                    </a>
+                    <a href="#contact" class="magnetic-hover inline-flex items-center justify-center gap-2 rounded-full border border-emerald-200/20 bg-emerald-300/10 px-6 py-3 font-bold text-emerald-100 transition hover:-translate-y-1 hover:bg-emerald-300/15">
+                        <i class="fa-solid fa-paper-plane"></i>
+                        Contact Me
                     </a>
                 </div>
-
-                <div class="project-card">
-                    <div class="project-icon">
-                        <i class="fas fa-calculator"></i>
+                <div class="hero-metrics mt-10 grid grid-cols-2 gap-3 sm:max-w-xl sm:grid-cols-3">
+                    <div class="rounded-2xl border border-white/10 bg-white/[0.05] p-4">
+                        <div class="text-2xl font-extrabold text-white">2000+</div>
+                        <div class="mt-1 text-xs font-semibold uppercase text-slate-400">Problems</div>
                     </div>
-                    <h3>Numerical Methods</h3>
-                    <p>A comprehensive collection of numerical methods implementations in C++, including root finding, interpolation, and differential equations solving techniques.</p>
-                    <div class="project-tech">
-                        <span class="tech-tag">C++</span>
-                        <span class="tech-tag">Mathematics</span>
-                        <span class="tech-tag">Numerical Methods</span> 
+                    <div class="rounded-2xl border border-white/10 bg-white/[0.05] p-4">
+                        <div class="text-2xl font-extrabold text-white">7</div>
+                        <div class="mt-1 text-xs font-semibold uppercase text-slate-400">Projects</div>
                     </div>
-                    <a href="https://github.com/KaziRifatAlMuin/Numerical-Methods-Console-Application" target="_blank" class="project-link">
-                        <i class="fab fa-github"></i> View Code
-                    </a>
-                </div>
-
-                <div class="project-card">
-                    <div class="project-icon">
-                        <i class="fas fa-code"></i>
+                    <div class="rounded-2xl border border-white/10 bg-white/[0.05] p-4">
+                        <div class="text-2xl font-extrabold text-white">ICPC</div>
+                        <div class="mt-1 text-xs font-semibold uppercase text-slate-400">Regional</div>
                     </div>
-                    <h3>Code Drive</h3>
-                    <p>A collection of solved competitive programming problems from various online judges like CodeForces, AtCoder, and SPOJ, implemented in C++.</p>
-                    <div class="project-tech">
-                        <span class="tech-tag">C++</span>
-                        <span class="tech-tag">Algorithms</span>
-                        <span class="tech-tag">Data Structures</span>
-                    </div>
-                    <a href="https://github.com/KaziRifatAlMuin/CodeDrive" target="_blank" class="project-link">
-                        <i class="fab fa-github"></i> View Code
-                    </a>
-                </div>
-
-                <div class="project-card">
-                    <div class="project-icon">
-                        <i class="fas fa-search"></i>
-                    </div>
-                    <h3>CodeQuest</h3>
-                    <p>A Competitive Programming Enhancer with powerful problem searching and progress tracking tools to boost your competitive programming journey.</p>
-                    <div class="project-tech">
-                        <span class="tech-tag">PHP Laravel</span>
-                        <span class="tech-tag">Blade Template</span>
-                        <span class="tech-tag">MySQL</span>
-                        <span class="tech-tag">Bootstrap CSS</span>
-                    </div>
-                    <a href="https://github.com/KaziRifatAlMuin/CodeQuest" target="_blank" class="project-link">
-                        <i class="fab fa-github"></i> View Code
-                    </a>
-                </div>
-
-                <div class="project-card">
-                    <div class="project-icon">
-                        <i class="fas fa-university"></i>
-                    </div>
-                    <h3>VaultX</h3>
-                    <p>Online Banking System with comprehensive features for managing accounts, transactions, and banking operations. Built with ASP.NET WebForm and SQL Server.</p>
-                    <div class="project-tech">
-                        <span class="tech-tag">ASP.NET</span>
-                        <span class="tech-tag">C#</span>
-                        <span class="tech-tag">SQL Server</span>
-                        <span class="tech-tag">JavaScript</span>
-                    </div>
-                    <a href="https://github.com/KaziRifatAlMuin/vaultx" target="_blank" class="project-link">
-                        <i class="fab fa-github"></i> View Code
-                    </a>
-                </div>
-
-                <div class="project-card">
-                    <div class="project-icon">
-                        <i class="fas fa-briefcase"></i>
-                    </div>
-                    <h3>Portfolio</h3>
-                    <p>Dynamic Portfolio Website with admin panel and content management system. Showcases projects, skills, and achievements with a modern, interactive design.</p>
-                    <div class="project-tech">
-                        <span class="tech-tag">ASP.NET</span>
-                        <span class="tech-tag">C#</span>
-                        <span class="tech-tag">JavaScript</span>
-                        <span class="tech-tag">SQL Server</span>
-                    </div>
-                    <a href="https://github.com/KaziRifatAlMuin/Portfolio" target="_blank" class="project-link">
-                        <i class="fab fa-github"></i> View Code
-                    </a>
                 </div>
             </div>
-        </section>
 
-        <!-- Education Section -->
-        <section id="education" class="page-section">
-            <div class="section-header">
-                <h1>Education</h1>
-                <p>My academic journey and achievements</p>
-            </div>
-
-            <div class="education-timeline">
-                <div class="timeline-item">
-                    <div class="timeline-marker">
-                        <i class="fas fa-graduation-cap"></i>
+            <div class="reveal relative mx-auto w-full max-w-lg">
+                <div class="absolute inset-8 rounded-full bg-cyan-300/20 blur-3xl"></div>
+                <div class="portrait-card tech-scan relative rounded-[2rem] border border-white/10 bg-white/[0.05] p-4 shadow-glow backdrop-blur">
+                    <div class="overflow-hidden rounded-[1.5rem] border border-white/10 bg-panel">
+                        <img src="images/profile.jpg" alt="Kazi Rifat Al Muin" class="aspect-[4/5] w-full object-cover">
                     </div>
-                    <div class="timeline-content">
-                        <div class="timeline-period">2023 - Present</div>
-                        <h3>Bachelor of Science in Computer Science and Engineering</h3>
-                        <h4>Khulna University of Engineering & Technology (KUET)</h4>
-                        <p>Currently pursuing CSE degree with focus on algorithms, data structures, and software development.</p>
-                        <div class="achievements">
-                            <span class="achievement">CSE</span>
-                            <span class="achievement">Competitive Programming</span>
-                            <span class="achievement">AGS of SGIPC</span>
+                    <div class="absolute -bottom-5 left-5 right-5 rounded-2xl border border-white/10 bg-ink/90 p-4 shadow-2xl backdrop-blur">
+                        <div class="flex items-center justify-between gap-4">
+                            <div>
+                                <p class="text-sm font-semibold text-slate-400">Current focus</p>
+                                <p class="font-display text-lg font-bold text-white">Algorithms + Product Engineering</p>
+                            </div>
+                            <div class="hidden h-12 w-12 place-items-center rounded-xl bg-cyan-300 text-ink sm:grid">
+                                <i class="fa-solid fa-bolt"></i>
+                            </div>
                         </div>
-                    </div>
-                </div>
-
-                <div class="timeline-item">
-                    <div class="timeline-marker">
-                        <i class="fas fa-school"></i>
-                    </div>
-                    <div class="timeline-content">
-                        <div class="timeline-period">2019 - 2021</div>
-                        <h3>Higher Secondary Certificate (HSC)</h3>
-                        <h4>Govt. M. M. City College, Khulna</h4>
-                        <p>Completed HSC in Science group with result GPA 5.00 & Board Scholarship.</p>
-                        <div class="achievements">
-                            <span class="achievement">Science Group</span>
-                            <span class="achievement">GPA 5.00</span>
-                            <span class="achievement">Board Scholarship</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="timeline-item">
-                    <div class="timeline-marker">
-                        <i class="fas fa-school"></i>
-                    </div>
-                    <div class="timeline-content">
-                        <div class="timeline-period">2014 - 2019</div>
-                        <h3>Secondary School Certificate (SSC)</h3>
-                        <h4>Saint Joseph's High School, Khulna</h4>
-                        <p>Completed SSC in Science group with result GPA 5.00</p>
-                        <div class="achievements">
-                            <span class="achievement">Science Group</span>
-                            <span class="achievement">GPA 5.00</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="timeline-item">
-                    <div class="timeline-marker">
-                        <i class="fas fa-award"></i>
-                    </div>
-                    <div class="timeline-content">
-                        <div class="timeline-period">Achievements</div>
-                        <h3>Competitive Programming Achievements</h3>
-                        <ul class="achievement-list">
-                            <li>Specialist rating on Codeforces</li>
-                            <li>26th in AUST Inter University Programming Contest 2025</li>
-                            <li>29th in BUET Inter University Programming Contest 2024</li>
-                            <li>38th in ICPC Dhaka Regional 2024</li>
-                            <li>2000+ problems solved across various platforms</li>
-                        </ul>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Contact Section -->
-        <section id="contact" class="page-section">
-            <div class="section-header">
-                <h1>Get In Touch</h1>
-                <p>Let's connect and discuss opportunities</p>
-            </div>
-
-            <div class="contact-content">
-                <div class="contact-info">
-                    <div class="contact-item">
-                        <div class="contact-icon">
-                            <i class="fas fa-envelope"></i>
-                        </div>
-                        <div class="contact-details">
-                            <h4>Email</h4>
-                            <p>contact@rifatalmuin.com</p>
-                        </div>
-                    </div>
-
-                    <div class="contact-item">
-                        <div class="contact-icon">
-                            <i class="fas fa-map-marker-alt"></i>
-                        </div>
-                        <div class="contact-details">
-                            <h4>Location</h4>
-                            <p>Khulna, Bangladesh</p>
-                        </div>
-                    </div>
-
-                    <div class="contact-item">
-                        <div class="contact-icon">
-                            <i class="fas fa-phone"></i>
-                        </div>
-                        <div class="contact-details">
-                            <h4>Phone</h4>
-                            <p>+880 1793 299246</p>
-                        </div>
-                    </div>
-
-                    <!-- <div class="social-section hide-on-mobile">
-                        <h4>Follow Me</h4>
-                        <div class="social-links">
-                            <a href="https://github.com/KaziRifatAlMuin" class="social-link" aria-label="GitHub"><i class="fab fa-github"></i></a>
-                            <a href="https://linkedin.com/in/rifatalmuin" class="social-link" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
-                            <a href="https://codeforces.com/profile/RifatALmuiN" class="social-link" aria-label="Codeforces"><i class="fas fa-code"></i></a>
-                            <a href="https://facebook.com/rifatalmuin21" class="social-link" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
-                        </div>
-                    </div> -->
+        <section class="border-y border-white/10 bg-white/[0.03]">
+            <div class="mx-auto grid max-w-7xl gap-4 px-4 py-8 sm:grid-cols-2 sm:px-6 lg:grid-cols-4 lg:px-8">
+                <div class="reveal rounded-2xl border border-white/10 bg-white/[0.04] p-5">
+                    <i class="fa-solid fa-code text-2xl text-cyan-300"></i>
+                    <h3 class="mt-4 font-display text-xl font-bold text-white">Competitive Programming</h3>
+                    <p class="mt-2 text-sm leading-6 text-slate-400">Data structures, graphs, dynamic programming, and contest strategy.</p>
                 </div>
-
-                <div class="contact-form">
-                    <form id="contactForm" action="https://api.web3forms.com/submit" method="POST">
-                        <input type="hidden" name="access_key" value="51d312ac-2af3-4467-bdbb-634e254da658">
-                        <input type="text" id="name" name="name" placeholder="Your Name" class="form-input" required>
-                        <input type="email" id="email" name="email" placeholder="Your Email" class="form-input" required>
-                        <input type="text" id="subject" name="subject" placeholder="Subject" class="form-input">
-                        <textarea id="message" name="message" placeholder="Your Message" rows="5" class="form-textarea" required></textarea>
-                        <!-- Honeypot spam protection (hidden) -->
-                        <input type="checkbox" name="botcheck" class="hidden" style="display:none;">
-                        <button type="submit" class="btn btn-primary">
-                            <i class="fas fa-paper-plane"></i> Send Message
-                        </button>
-                    </form>
+                <div class="reveal rounded-2xl border border-white/10 bg-white/[0.04] p-5">
+                    <i class="fa-solid fa-laptop-code text-2xl text-emerald-300"></i>
+                    <h3 class="mt-4 font-display text-xl font-bold text-white">Full-Stack Systems</h3>
+                    <p class="mt-2 text-sm leading-6 text-slate-400">Laravel, Spring Boot, databases, APIs, and responsive interfaces.</p>
+                </div>
+                <div class="reveal rounded-2xl border border-white/10 bg-white/[0.04] p-5">
+                    <i class="fa-solid fa-trophy text-2xl text-amber-300"></i>
+                    <h3 class="mt-4 font-display text-xl font-bold text-white">Contest Results</h3>
+                    <p class="mt-2 text-sm leading-6 text-slate-400">ICPC regional contests and national onsite programming competitions.</p>
+                </div>
+                <div class="reveal rounded-2xl border border-white/10 bg-white/[0.04] p-5">
+                    <i class="fa-solid fa-people-arrows text-2xl text-violet-300"></i>
+                    <h3 class="mt-4 font-display text-xl font-bold text-white">Team Builder</h3>
+                    <p class="mt-2 text-sm leading-6 text-slate-400">Mentoring, collaboration, and shipping practical software projects.</p>
                 </div>
             </div>
         </section>
 
-        <!-- Social Links -->
-        <section class="social">
-            <h3 style="color: #00ffff;">Connect With Me</h3>
-            <div class="social-links">
-                <a href="https://github.com/KaziRifatAlMuin" class="social-link" target="_blank" rel="noopener noreferrer" aria-label="GitHub Profile"><i class="fab fa-github"></i></a>
-                <a href="https://linkedin.com/in/rifatalmuin" class="social-link" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn Profile"><i class="fab fa-linkedin"></i></a>
-                <a href="https://codeforces.com/profile/RifatALmuiN" class="social-link" target="_blank" rel="noopener noreferrer" aria-label="Codeforces Profile"><i class="fas fa-code"></i></a>
-                <a href="https://facebook.com/rifatalmuin21" class="social-link" target="_blank" rel="noopener noreferrer" aria-label="Facebook Profile"><i class="fab fa-facebook"></i></a>
+        <section id="about" class="mx-auto max-w-7xl px-4 py-24 sm:px-6 lg:px-8">
+            <div class="section-shell reveal max-w-3xl">
+                <p class="text-sm font-bold uppercase tracking-[0.22em] text-cyan-300">About</p>
+                <h2 class="section-title mt-3 font-display text-3xl font-bold text-white sm:text-5xl">Recruiter-friendly engineering, contest-hardened thinking.</h2>
+                <p class="mt-5 text-lg leading-8 text-slate-300">
+                    I am a CSE undergraduate at Khulna University of Engineering & Technology. My work sits at the intersection of algorithms, backend systems, and user-facing products.
+                </p>
+            </div>
+
+            <div class="mt-12 grid gap-6 lg:grid-cols-[0.9fr_1.1fr]">
+                <div class="reveal grid gap-4 sm:grid-cols-2 lg:grid-cols-1">
+                    <div class="rounded-2xl border border-white/10 bg-white/[0.05] p-6">
+                        <div class="flex items-center gap-4">
+                            <div class="grid h-12 w-12 place-items-center rounded-xl bg-cyan-300/15 text-cyan-200"><i class="fa-solid fa-bullseye"></i></div>
+                            <div>
+                                <h3 class="font-display text-xl font-bold text-white">Goal</h3>
+                                <p class="mt-1 text-sm text-slate-400">Grow as a software engineer while staying active in contests.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="rounded-2xl border border-white/10 bg-white/[0.05] p-6">
+                        <div class="flex items-center gap-4">
+                            <div class="grid h-12 w-12 place-items-center rounded-xl bg-emerald-300/15 text-emerald-200"><i class="fa-solid fa-heart"></i></div>
+                            <div>
+                                <h3 class="font-display text-xl font-bold text-white">Interests</h3>
+                                <p class="mt-1 text-sm text-slate-400">Problem solving, mentoring, cycling, and product learning.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="reveal rounded-[2rem] border border-white/10 bg-white/[0.04] p-4">
+                    <div class="mb-4 flex items-end justify-between gap-4 px-2">
+                        <div>
+                            <h3 class="font-display text-2xl font-bold text-white">My Journey</h3>
+                            <p class="mt-1 text-sm text-slate-400">Glimpses from programming and student life.</p>
+                        </div>
+                        <div class="hidden gap-1 sm:flex" id="galleryDots"></div>
+                    </div>
+                    <div class="grid grid-cols-3 gap-3">
+                        <div id="photo-left" class="photo-slot overflow-hidden rounded-2xl border border-white/10 bg-panel">
+                            <img src="images/1.jpg" alt="Gallery photo" class="gallery-image aspect-[4/5] w-full object-cover opacity-80">
+                        </div>
+                        <div id="photo-center" class="photo-slot overflow-hidden rounded-2xl border border-cyan-300/30 bg-panel shadow-glow">
+                            <img src="images/2.jpg" alt="Gallery photo" class="gallery-image aspect-[4/5] w-full object-cover">
+                        </div>
+                        <div id="photo-right" class="photo-slot overflow-hidden rounded-2xl border border-white/10 bg-panel">
+                            <img src="images/3.jpg" alt="Gallery photo" class="gallery-image aspect-[4/5] w-full object-cover opacity-80">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="skills" class="border-y border-white/10 bg-white/[0.03] py-24">
+            <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+                <div class="reveal flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
+                    <div class="section-shell">
+                        <p class="text-sm font-bold uppercase tracking-[0.22em] text-cyan-300">Skills</p>
+                        <h2 class="section-title mt-3 font-display text-3xl font-bold text-white sm:text-5xl">Technical stack at a glance.</h2>
+                    </div>
+                    <p class="max-w-xl text-slate-400">Grouped for quick recruiter scanning: languages, frameworks, databases, tooling, and core problem-solving strengths.</p>
+                </div>
+
+                <div class="mt-12 grid gap-6">
+                    <div class="skill-category reveal">
+                        <h3 class="mb-4 font-display text-xl font-bold text-white">Programming Languages</h3>
+                        <div class="grid grid-cols-2 gap-3 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6">
+                            <article class="skill-card"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/c/c-original.svg" alt="C icon"><span>C</span></article>
+                            <article class="skill-card"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cplusplus/cplusplus-original.svg" alt="C++ icon"><span>C++</span></article>
+                            <article class="skill-card"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" alt="Java icon"><span>Java</span></article>
+                            <article class="skill-card"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python icon"><span>Python</span></article>
+                            <article class="skill-card"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-original.svg" alt="PHP icon"><span>PHP</span></article>
+                            <article class="skill-card"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JavaScript icon"><span>JavaScript</span></article>
+                            <article class="skill-card"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/csharp/csharp-original.svg" alt="C sharp icon"><span>C#</span></article>
+                            <article class="skill-card"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/swift/swift-original.svg" alt="Swift icon"><span>Swift</span></article>
+                        </div>
+                    </div>
+
+                    <div class="skill-category reveal">
+                        <h3 class="mb-4 font-display text-xl font-bold text-white">Frameworks & Technologies</h3>
+                        <div class="grid grid-cols-2 gap-3 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6">
+                            <article class="skill-card"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/laravel/laravel-original.svg" alt="Laravel icon"><span>Laravel</span></article>
+                            <article class="skill-card"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/spring/spring-original.svg" alt="Spring Boot icon"><span>Spring Boot</span></article>
+                            <article class="skill-card"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/dot-net/dot-net-original.svg" alt=".NET icon"><span>ASP.NET</span></article>
+                            <article class="skill-card"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" alt="React icon"><span>React</span></article>
+                            <article class="skill-card"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" alt="Node.js icon"><span>Node.js</span></article>
+                            <article class="skill-card"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bootstrap/bootstrap-original.svg" alt="Bootstrap icon"><span>Bootstrap</span></article>
+                            <article class="skill-card"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg" alt="Docker icon"><span>Docker</span></article>
+                            <article class="skill-card"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/firebase/firebase-plain.svg" alt="Firebase icon"><span>Firebase</span></article>
+                        </div>
+                    </div>
+
+                    <div class="skill-category reveal">
+                        <h3 class="mb-4 font-display text-xl font-bold text-white">Databases, Tools & Core</h3>
+                        <div class="grid grid-cols-2 gap-3 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6">
+                            <article class="skill-card"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" alt="MySQL icon"><span>MySQL</span></article>
+                            <article class="skill-card"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg" alt="PostgreSQL icon"><span>PostgreSQL</span></article>
+                            <article class="skill-card"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg" alt="MongoDB icon"><span>MongoDB</span></article>
+                            <article class="skill-card"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/microsoftsqlserver/microsoftsqlserver-plain.svg" alt="SQL Server icon"><span>SQL Server</span></article>
+                            <article class="skill-card"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" alt="Git icon"><span>Git</span></article>
+                            <article class="skill-card"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" alt="GitHub icon"><span>GitHub</span></article>
+                            <article class="skill-card"><i class="fa-solid fa-diagram-project text-4xl text-cyan-200"></i><span>DSA</span></article>
+                            <article class="skill-card"><i class="fa-solid fa-chess-board text-4xl text-emerald-200"></i><span>Competitive Programming</span></article>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="projects" class="mx-auto max-w-7xl px-4 py-24 sm:px-6 lg:px-8">
+            <div class="reveal flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
+                <div class="section-shell">
+                    <p class="text-sm font-bold uppercase tracking-[0.22em] text-cyan-300">Projects</p>
+                    <h2 class="section-title mt-3 font-display text-3xl font-bold text-white sm:text-5xl">Production-minded project work.</h2>
+                </div>
+                <p class="max-w-xl text-slate-400">Each card highlights scope, stack, and links so recruiters can understand the value quickly.</p>
+            </div>
+
+            <div class="mt-12 grid gap-6 lg:grid-cols-2">
+                <article class="project-card tech-scan magnetic-hover reveal lg:col-span-2">
+                    <div class="grid gap-0 lg:grid-cols-[1.05fr_0.95fr]">
+                        <div class="project-media">
+                            <img src="images/mydoctor.png" alt="MyDoctor project preview">
+                        </div>
+                        <div class="project-body">
+                            <div class="project-kicker"><i class="fa-solid fa-heart-pulse"></i> Featured Health System</div>
+                            <h3>MyDoctor - An Integrated Health Management System</h3>
+                            <p>AI-powered health platform with smart summaries, text-to-SQL queries, RAG-assisted advice, bilingual UI, and automated backups.</p>
+                            <ul>
+                                <li>OpenRouter and Gemini-powered health assistant.</li>
+                                <li>Text-to-SQL engine with automatic user scoping.</li>
+                                <li>Smart suggestions, bilingual UI, and secure workflows.</li>
+                            </ul>
+                            <div class="tech-row"><span>Laravel</span><span>PHP</span><span>MySQL</span><span>Bootstrap</span></div>
+                            <div class="project-actions">
+                                <a href="https://github.com/KaziRifatAlMuin/MyDoctor" target="_blank" rel="noopener"><i class="fab fa-github"></i> GitHub</a>
+                                <a href="https://mydoctor.rifatalmuin.com/" target="_blank" rel="noopener"><i class="fa-solid fa-arrow-up-right-from-square"></i> Live Demo</a>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="project-card tech-scan magnetic-hover reveal">
+                    <div class="project-media"><img src="images/aigame.png" alt="Knight Invasion project preview"></div>
+                    <div class="project-body">
+                        <div class="project-kicker"><i class="fa-solid fa-chess-knight"></i> AI Game</div>
+                        <h3>Knight Invasion Game - Two AI Battle</h3>
+                        <p>Turn-based tactical AI game featuring Minimax vs Fuzzy Logic on a 9x9 board.</p>
+                        <ul><li>Alpha-beta pruning and BFS validation.</li><li>Dynamic fire hazards and strategic blocking.</li></ul>
+                        <div class="tech-row"><span>Python</span><span>Pygame</span><span>AI</span><span>Minimax</span></div>
+                        <div class="project-actions">
+                            <a href="https://github.com/KaziRifatAlMuin/Knight-Invasion-Game" target="_blank" rel="noopener"><i class="fab fa-github"></i> GitHub</a>
+                            <a href="https://kazirifatalmuin.github.io/Knight-Invasion-Game/" target="_blank" rel="noopener"><i class="fa-solid fa-arrow-up-right-from-square"></i> Live Demo</a>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="project-card tech-scan magnetic-hover reveal">
+                    <div class="project-media"><img src="images/techbazar.png" alt="TechBazar project preview"></div>
+                    <div class="project-body">
+                        <div class="project-kicker"><i class="fa-solid fa-store"></i> Marketplace</div>
+                        <h3>TechBazar - Marketplace for Buyers and Sellers</h3>
+                        <p>Full-stack Spring Boot marketplace with security, Docker, and CI workflows.</p>
+                        <ul><li>Role-based admin, seller, and buyer access.</li><li>Thymeleaf UI with API and MVC flows.</li></ul>
+                        <div class="tech-row"><span>Spring Boot</span><span>Java</span><span>PostgreSQL</span><span>Docker</span></div>
+                        <div class="project-actions">
+                            <a href="https://github.com/KaziRifatAlMuin/tech-bazar" target="_blank" rel="noopener"><i class="fab fa-github"></i> GitHub</a>
+                            <a href="https://tech-bazar-gh8k.onrender.com" target="_blank" rel="noopener"><i class="fa-solid fa-arrow-up-right-from-square"></i> Live Demo</a>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="project-card tech-scan magnetic-hover reveal">
+                    <div class="project-media"><img src="images/bus.png" alt="Bus Ticket Booking App preview"></div>
+                    <div class="project-body">
+                        <div class="project-kicker"><i class="fab fa-apple"></i> iOS App</div>
+                        <h3>Bus Ticket Booking App</h3>
+                        <p>iOS booking platform with seat matrix, PDF tickets, and Firestore workflows.</p>
+                        <ul><li>Firestore-backed auth, routes, and atomic booking flow.</li><li>Seat matrix booking with cancellation support.</li></ul>
+                        <div class="tech-row"><span>SwiftUI</span><span>Swift</span><span>Firebase</span></div>
+                        <div class="project-actions">
+                            <a href="https://github.com/KaziRifatAlMuin/Bus-Ticket-Booking-App" target="_blank" rel="noopener"><i class="fab fa-github"></i> GitHub</a>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="project-card tech-scan magnetic-hover reveal">
+                    <div class="project-media"><img src="images/dream.png" alt="Dream blood donation system preview"></div>
+                    <div class="project-body">
+                        <div class="project-kicker"><i class="fa-solid fa-hand-holding-heart"></i> Social Impact</div>
+                        <h3>Dream - Blood Donation Management System</h3>
+                        <p>Blood donation platform for donor search, requests, and volunteer activity tracking.</p>
+                        <ul><li>Efficient donor search and status updates.</li><li>Campaign-ready responsive web experience.</li></ul>
+                        <div class="tech-row"><span>Laravel</span><span>PHP</span><span>MySQL</span><span>Bootstrap</span></div>
+                        <div class="project-actions">
+                            <a href="https://github.com/KaziRifatAlMuin/Dream" target="_blank" rel="noopener"><i class="fab fa-github"></i> GitHub</a>
+                            <a href="https://dream.rifatalmuin.com/" target="_blank" rel="noopener"><i class="fa-solid fa-arrow-up-right-from-square"></i> Live Demo</a>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="project-card tech-scan magnetic-hover reveal">
+                    <div class="project-media"><img src="images/codequest.png" alt="CodeQuest project preview"></div>
+                    <div class="project-body">
+                        <div class="project-kicker"><i class="fa-solid fa-magnifying-glass-chart"></i> CP Platform</div>
+                        <h3>CodeQuest - Competitive Programming Enhancer</h3>
+                        <p>Problem discovery, tracking, editorials, leaderboards, and community features.</p>
+                        <ul><li>Tag-based discovery and progress analytics.</li><li>SQL Quest playground for safe analytics.</li></ul>
+                        <div class="tech-row"><span>Laravel</span><span>PHP</span><span>MySQL</span><span>Bootstrap</span></div>
+                        <div class="project-actions">
+                            <a href="https://github.com/KaziRifatAlMuin/CodeQuest" target="_blank" rel="noopener"><i class="fab fa-github"></i> GitHub</a>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="project-card tech-scan magnetic-hover reveal">
+                    <div class="project-media"><img src="images/lift.jpg" alt="Automated Elevator project preview"></div>
+                    <div class="project-body">
+                        <div class="project-kicker"><i class="fa-solid fa-robot"></i> Embedded System</div>
+                        <h3>Automated Elevator</h3>
+                        <p>Safety-focused two-floor elevator system with sensor automation and web API control.</p>
+                        <ul><li>Presence detection, obstacle safety, and protection logic.</li><li>Remote status and control endpoints.</li></ul>
+                        <div class="tech-row"><span>ESP32</span><span>React</span><span>Sensors</span><span>DC Motor</span></div>
+                        <div class="project-actions">
+                            <a href="https://github.com/KaziRifatAlMuin/Automated-Elevator" target="_blank" rel="noopener"><i class="fab fa-github"></i> GitHub</a>
+                            <a href="https://www.youtube.com/shorts/9187-hD0k88" target="_blank" rel="noopener"><i class="fab fa-youtube"></i> Video</a>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <section id="education" class="border-y border-white/10 bg-white/[0.03] py-24">
+            <div class="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
+                <div class="section-shell reveal text-center">
+                    <p class="text-sm font-bold uppercase tracking-[0.22em] text-cyan-300">Education</p>
+                    <h2 class="section-title mt-3 font-display text-3xl font-bold text-white sm:text-5xl">Academic path and competitive proof.</h2>
+                </div>
+                <div class="mt-12 grid gap-5">
+                    <article class="reveal rounded-2xl border border-white/10 bg-white/[0.05] p-6">
+                        <p class="text-sm font-bold text-cyan-200">January 2023 - May 2027</p>
+                        <h3 class="mt-2 font-display text-2xl font-bold text-white">B.Sc. in Computer Science and Engineering</h3>
+                        <p class="mt-1 font-semibold text-slate-300">Khulna University of Engineering & Technology (KUET)</p>
+                        <p class="mt-3 text-slate-400">Focused on algorithms, data structures, software engineering, and competitive programming.</p>
+                    </article>
+                    <article class="reveal rounded-2xl border border-white/10 bg-white/[0.05] p-6">
+                        <p class="text-sm font-bold text-emerald-200">June 2019 - February 2022</p>
+                        <h3 class="mt-2 font-display text-2xl font-bold text-white">Higher Secondary Certificate in Science</h3>
+                        <p class="mt-1 font-semibold text-slate-300">Govt. M. M. City College, Khulna</p>
+                    </article>
+                    <article class="reveal rounded-2xl border border-white/10 bg-white/[0.05] p-6">
+                        <p class="text-sm font-bold text-violet-200">Competitive Programming</p>
+                        <h3 class="mt-2 font-display text-2xl font-bold text-white">Achievements</h3>
+                        <div class="mt-4 grid gap-3 sm:grid-cols-2">
+                            <span class="achievement-pill">Codeforces Specialist</span>
+                            <span class="achievement-pill">CodeChef 3-Star</span>
+                            <span class="achievement-pill">ICPC Asia Dhaka Regional finalist</span>
+                            <span class="achievement-pill">12+ national onsite contests</span>
+                            <span class="achievement-pill">2000+ problems solved</span>
+                            <span class="achievement-pill">Bangladesh Mathematical Olympiad regional winner</span>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="mx-auto max-w-7xl px-4 py-24 sm:px-6 lg:px-8">
+            <div class="grid gap-8 lg:grid-cols-[0.9fr_1.1fr]">
+                <div class="section-shell reveal">
+                    <p class="text-sm font-bold uppercase tracking-[0.22em] text-cyan-300">Contact</p>
+                    <h2 class="section-title mt-3 font-display text-3xl font-bold text-white sm:text-5xl">Available for serious engineering conversations.</h2>
+                    <p class="mt-5 text-lg leading-8 text-slate-300">Reach out for software work, collaboration, mentoring, or competitive programming discussions.</p>
+                    <div class="mt-8 grid gap-4">
+                        <a href="mailto:kazirifatalmuin246@gmail.com" class="contact-item"><i class="fa-solid fa-envelope"></i><span>kazirifatalmuin246@gmail.com</span></a>
+                        <a href="tel:+8801793299246" class="contact-item"><i class="fa-solid fa-phone"></i><span>+8801793299246</span></a>
+                        <div class="contact-item"><i class="fa-solid fa-location-dot"></i><span>Khulna, Bangladesh</span></div>
+                    </div>
+                    <div class="mt-8 flex flex-wrap gap-3">
+                        <a class="social-link" href="https://github.com/KaziRifatAlMuin" target="_blank" rel="noopener" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                        <a class="social-link" href="https://linkedin.com/in/rifatalmuin" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                        <a class="social-link" href="https://codeforces.com/profile/RifatALmuiN" target="_blank" rel="noopener" aria-label="Codeforces"><i class="fa-solid fa-code"></i></a>
+                        <a class="social-link" href="https://www.codechef.com/users/rifatalmuin" target="_blank" rel="noopener" aria-label="CodeChef"><i class="fa-solid fa-utensils"></i></a>
+                    </div>
+                </div>
+
+                <form id="contactForm" action="https://api.web3forms.com/submit" method="POST" class="reveal rounded-[2rem] border border-white/10 bg-white/[0.05] p-5 shadow-2xl backdrop-blur sm:p-8">
+                    <input type="hidden" name="access_key" value="51d312ac-2af3-4467-bdbb-634e254da658">
+                    <input type="checkbox" name="botcheck" class="hidden" style="display:none;">
+                    <div class="grid gap-4 sm:grid-cols-2">
+                        <input class="form-field" type="text" name="name" placeholder="Your Name" required>
+                        <input class="form-field" type="email" name="email" placeholder="Your Email" required>
+                    </div>
+                    <input class="form-field mt-4" type="text" name="subject" placeholder="Subject">
+                    <textarea class="form-field mt-4 min-h-40 resize-y" name="message" placeholder="Your Message" required></textarea>
+                    <button type="submit" class="mt-5 inline-flex w-full items-center justify-center gap-2 rounded-2xl bg-cyan-300 px-6 py-4 font-bold text-ink shadow-glow transition hover:-translate-y-1 hover:bg-white">
+                        <i class="fa-solid fa-paper-plane"></i>
+                        Send Message
+                    </button>
+                </form>
             </div>
         </section>
     </main>
 
-    <!-- Footer -->
-    <footer class="footer">
-        <p>&copy; 2025 Kazi Rifat Al Muin. All Rights Reserved.</p>
+    <footer class="relative z-10 border-t border-white/10 px-4 py-8 text-center text-sm text-slate-400">
+        <p>&copy; 2026 Kazi Rifat Al Muin. All Rights Reserved.</p>
     </footer>
 
-    <!-- Inline CSS for Facebook Preview - Force logo size constraints immediately -->
-    <style>
-        .nav-logo, .side-nav-logo-img {
-            max-width: 50px !important;
-            max-height: 50px !important;
-        }
-        @media (max-width: 768px) {
-            .nav-logo {
-                max-width: 45px !important;
-                max-height: 45px !important;
+    <style type="text/tailwindcss">
+        @layer components {
+            .skill-card {
+                @apply flex min-h-32 flex-col items-center justify-center gap-3 rounded-2xl border border-white/10 bg-white/[0.05] p-4 text-center shadow-xl shadow-black/10 transition duration-300 hover:-translate-y-1 hover:border-cyan-200/40 hover:bg-white/[0.08];
             }
-            .side-nav-logo-img {
-                max-width: 42px !important;
-                max-height: 42px !important;
+            .skill-card img {
+                @apply h-12 w-12 object-contain;
+            }
+            .skill-card span {
+                @apply text-sm font-bold text-slate-100;
+            }
+            .project-card {
+                @apply overflow-hidden rounded-[1.75rem] border border-white/10 bg-white/[0.05] shadow-2xl shadow-black/20 backdrop-blur transition duration-300 hover:-translate-y-1 hover:border-cyan-200/30;
+            }
+            .project-media {
+                @apply overflow-hidden bg-panel;
+            }
+            .project-media img {
+                @apply aspect-video w-full object-cover transition duration-500 group-hover:scale-105;
+            }
+            .project-body {
+                @apply p-6 sm:p-7;
+            }
+            .project-kicker {
+                @apply mb-4 inline-flex items-center gap-2 rounded-full border border-cyan-300/20 bg-cyan-300/10 px-3 py-1 text-xs font-bold uppercase tracking-wide text-cyan-100;
+            }
+            .project-body h3 {
+                @apply font-display text-2xl font-bold leading-tight text-white;
+            }
+            .project-body p {
+                @apply mt-3 leading-7 text-slate-300;
+            }
+            .project-body ul {
+                @apply mt-4 grid gap-2 text-sm text-slate-400;
+            }
+            .project-body li {
+                @apply rounded-xl border border-white/10 bg-white/[0.035] px-3 py-2;
+            }
+            .tech-row {
+                @apply mt-5 flex flex-wrap gap-2;
+            }
+            .tech-row span {
+                @apply rounded-full border border-white/10 bg-white/[0.06] px-3 py-1 text-xs font-bold text-slate-200;
+            }
+            .project-actions {
+                @apply mt-6 flex flex-wrap gap-3;
+            }
+            .project-actions a {
+                @apply inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/[0.06] px-4 py-2 text-sm font-bold text-white transition hover:border-cyan-200/40 hover:bg-cyan-300 hover:text-ink;
+            }
+            .achievement-pill {
+                @apply rounded-xl border border-white/10 bg-white/[0.05] px-4 py-3 text-sm font-semibold text-slate-200;
+            }
+            .contact-item {
+                @apply flex items-center gap-3 rounded-2xl border border-white/10 bg-white/[0.05] p-4 font-semibold text-slate-200 transition hover:border-cyan-200/30 hover:bg-white/[0.08];
+            }
+            .contact-item i {
+                @apply grid h-10 w-10 place-items-center rounded-xl bg-cyan-300/10 text-cyan-200;
+            }
+            .social-link {
+                @apply grid h-12 w-12 place-items-center rounded-2xl border border-white/10 bg-white/[0.05] text-lg text-slate-100 transition hover:-translate-y-1 hover:border-cyan-200/40 hover:bg-cyan-300 hover:text-ink;
+            }
+            .form-field {
+                @apply w-full rounded-2xl border border-white/10 bg-ink/60 px-4 py-4 font-medium text-white outline-none transition placeholder:text-slate-500 focus:border-cyan-200/60 focus:bg-ink/80 focus:ring-4 focus:ring-cyan-300/10;
             }
         }
     </style>
 
-    <!-- JavaScript -->
-    <script src="script.js" defer></script>
+    <script>
+        const navbar = document.getElementById('navbar');
+        const mobileMenuButton = document.getElementById('mobileMenuButton');
+        const mobileMenuFloating = document.getElementById('mobileMenuFloating');
+        const mobileMenu = document.getElementById('mobileMenu');
+        const scrollProgress = document.getElementById('scrollProgress');
+
+        document.body.classList.add('reveal-ready');
+
+        function setMobileMenu(open) {
+            if (!mobileMenu) return;
+            mobileMenuButton?.setAttribute('aria-expanded', String(open));
+            mobileMenuFloating?.setAttribute('aria-expanded', String(open));
+            mobileMenu.classList.toggle('pointer-events-none', !open);
+            mobileMenu.classList.toggle('translate-y-2', !open);
+            mobileMenu.classList.toggle('opacity-0', !open);
+            mobileMenu.classList.toggle('translate-y-0', open);
+            mobileMenu.classList.toggle('opacity-100', open);
+            mobileMenuButton?.classList.toggle('menu-open', open);
+            if (mobileMenuFloating) mobileMenuFloating.textContent = open ? 'CLOSE' : 'MENU';
+        }
+
+        mobileMenuButton?.addEventListener('click', () => {
+            setMobileMenu(mobileMenuButton.getAttribute('aria-expanded') !== 'true');
+        });
+
+        mobileMenuFloating?.addEventListener('click', () => {
+            setMobileMenu(mobileMenuFloating.getAttribute('aria-expanded') !== 'true');
+        });
+
+        document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+            anchor.addEventListener('click', (event) => {
+                const target = document.querySelector(anchor.getAttribute('href'));
+                if (!target) return;
+                event.preventDefault();
+                target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                setMobileMenu(false);
+            });
+        });
+
+        document.addEventListener('keydown', (event) => {
+            if (event.key === 'Escape') setMobileMenu(false);
+        });
+
+        function syncNavbar() {
+            if (!navbar) return;
+            const scrolled = window.scrollY > 24;
+            navbar.classList.toggle('bg-ink/90', scrolled);
+            navbar.classList.toggle('shadow-glow', scrolled);
+            navbar.classList.toggle('border-cyan-200/20', scrolled);
+            if (scrollProgress) {
+                const scrollable = document.documentElement.scrollHeight - window.innerHeight;
+                const progress = scrollable > 0 ? (window.scrollY / scrollable) * 100 : 0;
+                scrollProgress.style.width = `${Math.min(100, Math.max(0, progress))}%`;
+            }
+        }
+
+        window.addEventListener('scroll', syncNavbar, { passive: true });
+        syncNavbar();
+
+        const revealObserver = new IntersectionObserver((entries) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('is-visible');
+                    revealObserver.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+
+        document.querySelectorAll('.reveal').forEach((element) => revealObserver.observe(element));
+
+        function initTypingText() {
+            const target = document.getElementById('typingText');
+            if (!target) return;
+
+            const phrases = [
+                'I solve algorithms and build polished full stack products.',
+                'I design clean systems, practical UX, and reliable data flows.',
+                'I turn complex requirements into recruiter friendly software.',
+                'I work across Laravel, Spring Boot, React, databases, and competitive programming.'
+            ];
+
+            let phraseIndex = 0;
+            let charIndex = 0;
+            let deleting = false;
+
+            function tick() {
+                const phrase = phrases[phraseIndex];
+                target.textContent = phrase.slice(0, charIndex);
+
+                if (!deleting && charIndex < phrase.length) {
+                    charIndex += 1;
+                    window.setTimeout(tick, 34);
+                    return;
+                }
+
+                if (!deleting && charIndex === phrase.length) {
+                    deleting = true;
+                    window.setTimeout(tick, 1150);
+                    return;
+                }
+
+                if (deleting && charIndex > 0) {
+                    charIndex -= 1;
+                    window.setTimeout(tick, 16);
+                    return;
+                }
+
+                deleting = false;
+                phraseIndex = (phraseIndex + 1) % phrases.length;
+                window.setTimeout(tick, 180);
+            }
+
+            tick();
+        }
+
+        initTypingText();
+
+        function initGallery() {
+            const slots = {
+                left: document.getElementById('photo-left'),
+                center: document.getElementById('photo-center'),
+                right: document.getElementById('photo-right')
+            };
+            if (!slots.left || !slots.center || !slots.right) return;
+
+            const photos = ['images/1.jpg', 'images/2.jpg', 'images/3.jpg', 'images/4.jpg', 'images/5.jpg', 'images/6.jpg', 'images/7.jpg', 'images/8.jpg', 'images/9.jpg', 'images/10.jpg'];
+            let index = 1;
+            let timer;
+            const dotsContainer = document.getElementById('galleryDots');
+
+            if (dotsContainer) {
+                photos.forEach((_, photoIndex) => {
+                    const dot = document.createElement('button');
+                    dot.type = 'button';
+                    dot.className = 'h-2.5 w-2.5 rounded-full bg-white/20 transition hover:bg-cyan-200';
+                    dot.setAttribute('aria-label', `Show gallery photo ${photoIndex + 1}`);
+                    dot.addEventListener('click', () => {
+                        index = photoIndex;
+                        updateGallery();
+                        restart();
+                    });
+                    dotsContainer.appendChild(dot);
+                });
+            }
+
+            function updateSlot(slot, src, isCenter) {
+                slot.classList.add('fade-out');
+                window.setTimeout(() => {
+                    const image = slot.querySelector('img');
+                    if (image) image.src = src;
+                    slot.classList.toggle('border-cyan-300/30', isCenter);
+                    slot.classList.toggle('shadow-glow', isCenter);
+                    slot.classList.toggle('border-white/10', !isCenter);
+                    slot.classList.remove('fade-out');
+                }, 120);
+            }
+
+            function updateGallery() {
+                const leftIndex = (index - 1 + photos.length) % photos.length;
+                const rightIndex = (index + 1) % photos.length;
+                updateSlot(slots.left, photos[leftIndex], false);
+                updateSlot(slots.center, photos[index], true);
+                updateSlot(slots.right, photos[rightIndex], false);
+                dotsContainer?.querySelectorAll('button').forEach((dot, dotIndex) => {
+                    dot.classList.toggle('bg-cyan-200', dotIndex === index);
+                    dot.classList.toggle('bg-white/20', dotIndex !== index);
+                });
+            }
+
+            function restart() {
+                window.clearInterval(timer);
+                timer = window.setInterval(() => {
+                    index = (index + 1) % photos.length;
+                    updateGallery();
+                }, 1150);
+            }
+
+            updateGallery();
+            restart();
+        }
+
+        initGallery();
+
+        function initActiveNavigation() {
+            const links = [...document.querySelectorAll('.nav-link')];
+            const sections = links
+                .map((link) => document.querySelector(link.getAttribute('href')))
+                .filter(Boolean);
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach((entry) => {
+                    if (!entry.isIntersecting) return;
+                    links.forEach((link) => {
+                        const active = link.getAttribute('href') === `#${entry.target.id}`;
+                        link.classList.toggle('bg-cyan-300', active);
+                        link.classList.toggle('text-ink', active);
+                        link.classList.toggle('text-slate-300', !active);
+                    });
+                });
+            }, { rootMargin: '-35% 0px -55% 0px', threshold: 0.01 });
+
+            sections.forEach((section) => observer.observe(section));
+        }
+
+        initActiveNavigation();
+
+        function initMagneticHover() {
+            document.querySelectorAll('.magnetic-hover, .skill-card, .project-card').forEach((element) => {
+                element.addEventListener('mousemove', (event) => {
+                    const rect = element.getBoundingClientRect();
+                    const x = ((event.clientX - rect.left) / rect.width - 0.5) * 10;
+                    const y = ((event.clientY - rect.top) / rect.height - 0.5) * -10;
+                    element.style.transform = `perspective(900px) rotateX(${y}deg) rotateY(${x}deg) translateY(-4px)`;
+                });
+
+                element.addEventListener('mouseleave', () => {
+                    element.style.transform = '';
+                });
+            });
+        }
+
+        initMagneticHover();
+    </script>
 </body>
 </html>
