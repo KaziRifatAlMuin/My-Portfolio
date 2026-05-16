@@ -5,28 +5,38 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
-    <title>Kazi Rifat Al Muin | Competitive Programmer</title>
-    <meta name="description" content="Kazi Rifat Al Muin - CSE student at KUET, competitive programmer with 2000+ problems solved, Codeforces Specialist, CodeChef 3-Star, and full-stack developer.">
-    <meta name="keywords" content="Kazi Rifat Al Muin, Rifat Al Muin, competitive programming, codeforces specialist, KUET CSE, software developer, web developer, C++ programmer, Java developer, algorithm expert, ICPC contestant, programming portfolio, Bangladesh programmer">
+    <title>Kazi Rifat Al Muin | Competitive Programmer & Full-Stack Developer</title>
+    <meta name="description"
+        content="Portfolio of Kazi Rifat Al Muin, KUET CSE student, competitive programmer, Codeforces Specialist, CodeChef 3-Star, ICPC regional contestant, and full-stack developer.">
+    <meta name="keywords"
+        content="Kazi Rifat Al Muin, Rifat Al Muin, KaziRifatAlMuin, competitive programmer, full-stack developer, Codeforces Specialist, CodeChef 3-Star, KUET CSE, ICPC contestant, Laravel developer, Spring Boot developer, React developer, Bangladesh programmer">
     <meta name="author" content="Kazi Rifat Al Muin">
     <meta name="robots" content="index, follow">
     <link rel="canonical" href="https://rifatalmuin.com/">
 
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://rifatalmuin.com/">
-    <meta property="og:title" content="Kazi Rifat Al Muin - Competitive Programmer & Developer">
-    <meta property="og:description" content="CSE student at KUET | Codeforces Specialist | CodeChef 3-Star | 2000+ problems solved">
+    <meta property="og:title" content="Kazi Rifat Al Muin | Competitive Programmer & Full-Stack Developer">
+    <meta property="og:description"
+        content="KUET CSE student, Codeforces Specialist, CodeChef 3-Star, ICPC regional contestant, and full-stack developer.">
     <meta property="og:image" content="https://rifatalmuin.com/images/weblogo.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
     <meta property="og:image:alt" content="Kazi Rifat Al Muin Portfolio Logo">
     <meta property="og:site_name" content="Kazi Rifat Al Muin Portfolio">
 
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Kazi Rifat Al Muin - Competitive Programmer & Developer">
-    <meta name="twitter:description" content="CSE student at KUET | Codeforces Specialist | CodeChef 3-Star | 2000+ problems solved">
+    <meta name="twitter:title" content="Kazi Rifat Al Muin | Competitive Programmer & Full-Stack Developer">
+    <meta name="twitter:description"
+        content="KUET CSE student, Codeforces Specialist, CodeChef 3-Star, ICPC regional contestant, and full-stack developer.">
     <meta name="twitter:image" content="https://rifatalmuin.com/images/weblogo.png">
 
-    <link rel="icon" type="image/png" href="images/weblogo.png">
-    <link rel="apple-touch-icon" href="images/weblogo.png">
+    <meta name="theme-color" content="#08111f">
+    <link rel="icon" href="favicon.ico" sizes="any">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+    <link rel="manifest" href="site.webmanifest">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -83,9 +93,37 @@
             filter: drop-shadow(0 0 18px rgba(103, 232, 249, 0.32));
         }
 
+        .hero-name {
+            min-height: 2.35em;
+            white-space: pre-line;
+        }
+
+        .hero-stagger,
+        .hero-portrait {
+            opacity: 0;
+            transform: translateY(26px);
+            transition: opacity 1050ms ease, transform 1050ms ease;
+        }
+
+        .hero-ready .hero-stagger,
+        .hero-ready .hero-portrait {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .hero-portrait {
+            transition-delay: 220ms;
+        }
+
         .typing-line {
             min-height: 6rem;
             overflow-wrap: anywhere;
+        }
+
+        .hero-highlight {
+            color: #a5f3fc;
+            font-weight: 800;
+            text-shadow: 0 0 22px rgba(103, 232, 249, 0.28);
         }
 
         @media (min-width: 640px) {
@@ -132,6 +170,29 @@
             .typing-line {
                 font-size: 1.08rem;
                 line-height: 1.85;
+                width: calc(100vw - 2rem);
+                max-width: calc(100vw - 2rem);
+            }
+
+            #home {
+                width: 100%;
+                max-width: 100%;
+                grid-template-columns: minmax(0, 1fr);
+                overflow: hidden;
+            }
+
+            #home > div {
+                min-width: 0;
+            }
+
+            #heroActions,
+            #heroMetrics {
+                width: calc(100vw - 2rem);
+                max-width: calc(100vw - 2rem);
+            }
+
+            #heroPortrait {
+                max-width: min(21rem, calc(100vw - 2rem));
             }
         }
 
@@ -185,7 +246,7 @@
         .reveal-ready .reveal {
             opacity: 0;
             transform: translateY(24px);
-            transition: opacity 700ms ease, transform 700ms ease;
+            transition: opacity 1100ms ease, transform 1100ms ease;
         }
 
         .reveal-ready .reveal.is-visible {
@@ -291,6 +352,79 @@
             transform-style: preserve-3d;
         }
 
+        .metric-card,
+        .focus-card,
+        .about-effect-card {
+            position: relative;
+            overflow: hidden;
+            transform: translateY(0) scale(1);
+            transition: transform 340ms ease, border-color 340ms ease, background 340ms ease, box-shadow 340ms ease;
+        }
+
+        .metric-card::before,
+        .focus-card::before,
+        .about-effect-card::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(circle at var(--spot-x, 50%) var(--spot-y, 50%), rgba(103, 232, 249, 0.16), transparent 34%);
+            opacity: 0;
+            transition: opacity 320ms ease;
+            pointer-events: none;
+        }
+
+        .metric-card:hover,
+        .focus-card:hover,
+        .about-effect-card:hover {
+            transform: translateY(-8px) scale(1.015);
+            border-color: rgba(103, 232, 249, 0.34);
+            background: rgba(103, 232, 249, 0.075);
+            box-shadow: 0 24px 70px rgba(34, 211, 238, 0.14);
+        }
+
+        .metric-card:hover::before,
+        .focus-card:hover::before,
+        .about-effect-card:hover::before {
+            opacity: 1;
+        }
+
+        .metric-card i,
+        .focus-card i {
+            transition: transform 340ms ease, filter 340ms ease;
+        }
+
+        .metric-card:hover i,
+        .focus-card:hover i {
+            transform: translateY(-2px) scale(1.12) rotate(-4deg);
+            filter: drop-shadow(0 0 16px rgba(103, 232, 249, 0.45));
+        }
+
+        .project-featured .project-media {
+            min-height: 100%;
+        }
+
+        .project-featured .project-media img {
+            aspect-ratio: auto;
+            display: block;
+            width: 100%;
+            height: 100%;
+            min-height: 31rem;
+            object-fit: cover;
+            object-position: center center;
+        }
+
+        @media (max-width: 1023px) {
+            .project-featured .project-media img {
+                min-height: 18rem;
+            }
+        }
+
+        @media (max-width: 640px) {
+            .project-featured .project-media img {
+                min-height: 15rem;
+            }
+        }
+
         .skill-card {
             position: relative;
             overflow: hidden;
@@ -308,6 +442,41 @@
 
         .skill-card:hover::after {
             transform: scaleX(1);
+        }
+
+        .achievement-tile {
+            position: relative;
+            overflow: hidden;
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 1rem;
+            background: rgba(255,255,255,0.045);
+            padding: 1rem 1rem 1rem 2.7rem;
+            color: #e2e8f0;
+            line-height: 1.65;
+            transition: transform 320ms ease, border-color 320ms ease, background 320ms ease, box-shadow 320ms ease;
+        }
+
+        .achievement-tile::before {
+            content: "";
+            position: absolute;
+            left: 1rem;
+            top: 1.35rem;
+            width: 0.55rem;
+            height: 0.55rem;
+            border-radius: 999px;
+            background: #67e8f9;
+            box-shadow: 0 0 18px rgba(103, 232, 249, 0.8);
+        }
+
+        .achievement-tile:hover {
+            transform: translateY(-6px);
+            border-color: rgba(103, 232, 249, 0.34);
+            background: rgba(103, 232, 249, 0.08);
+            box-shadow: 0 24px 70px rgba(34, 211, 238, 0.13);
+        }
+
+        #achievements {
+            scroll-margin-top: 8rem;
         }
 
         .menu-glyph {
@@ -336,6 +505,7 @@
       "sameAs": [
         "https://github.com/KaziRifatAlMuin",
         "https://linkedin.com/in/rifatalmuin",
+        "https://www.facebook.com/rifatalmuin21/",
         "https://codeforces.com/profile/RifatALmuiN",
         "https://www.codechef.com/users/rifatalmuin"
       ],
@@ -351,13 +521,15 @@
     <header class="fixed inset-x-0 top-0 z-50 px-4 pt-4">
         <nav id="navbar" class="mx-auto flex max-w-7xl items-center justify-between rounded-2xl border border-white/10 bg-ink/70 px-4 py-3 shadow-2xl shadow-black/20 backdrop-blur-xl transition-all duration-300 sm:px-6" aria-label="Main navigation">
             <a href="#home" class="flex items-center gap-3 text-cyan-300" aria-label="Go to home">
-                <img src="images/logo.png" alt="Kazi Rifat Al Muin logo" class="brand-logo rounded-2xl border border-cyan-300/20 bg-cyan-300/10 object-contain p-1.5 shadow-glow">
+                <img src="images/logo-cyan.png" alt="Kazi Rifat Al Muin logo" class="brand-logo object-contain">
             </a>
 
             <div class="hidden items-center gap-1 rounded-full border border-white/10 bg-white/[0.04] p-1 lg:flex">
                 <a class="nav-link rounded-full px-4 py-2 text-sm font-semibold text-slate-300 transition hover:bg-white/10 hover:text-white" href="#home">Home</a>
                 <a class="nav-link rounded-full px-4 py-2 text-sm font-semibold text-slate-300 transition hover:bg-white/10 hover:text-white" href="#about">About</a>
                 <a class="nav-link rounded-full px-4 py-2 text-sm font-semibold text-slate-300 transition hover:bg-white/10 hover:text-white" href="#skills">Skills</a>
+                <a class="nav-link rounded-full px-4 py-2 text-sm font-semibold text-slate-300 transition hover:bg-white/10 hover:text-white"
+                    href="#achievements">Achievements</a>
                 <a class="nav-link rounded-full px-4 py-2 text-sm font-semibold text-slate-300 transition hover:bg-white/10 hover:text-white" href="#projects">Projects</a>
                 <a class="nav-link rounded-full px-4 py-2 text-sm font-semibold text-slate-300 transition hover:bg-white/10 hover:text-white" href="#education">Education</a>
                 <a class="nav-link rounded-full px-4 py-2 text-sm font-semibold text-slate-300 transition hover:bg-white/10 hover:text-white" href="#contact">Contact</a>
@@ -380,6 +552,8 @@
                 <a href="#home" class="mobile-link rounded-xl px-4 py-3 font-semibold text-slate-200 hover:bg-white/10"><i class="fa-solid fa-house mr-3 text-cyan-300"></i>Home</a>
                 <a href="#about" class="mobile-link rounded-xl px-4 py-3 font-semibold text-slate-200 hover:bg-white/10"><i class="fa-solid fa-user mr-3 text-cyan-300"></i>About</a>
                 <a href="#skills" class="mobile-link rounded-xl px-4 py-3 font-semibold text-slate-200 hover:bg-white/10"><i class="fa-solid fa-code mr-3 text-cyan-300"></i>Skills</a>
+                <a href="#achievements" class="mobile-link rounded-xl px-4 py-3 font-semibold text-slate-200 hover:bg-white/10"><i
+                        class="fa-solid fa-trophy mr-3 text-cyan-300"></i>Achievements</a>
                 <a href="#projects" class="mobile-link rounded-xl px-4 py-3 font-semibold text-slate-200 hover:bg-white/10"><i class="fa-solid fa-layer-group mr-3 text-cyan-300"></i>Projects</a>
                 <a href="#education" class="mobile-link rounded-xl px-4 py-3 font-semibold text-slate-200 hover:bg-white/10"><i class="fa-solid fa-graduation-cap mr-3 text-cyan-300"></i>Education</a>
                 <a href="#contact" class="mobile-link rounded-xl px-4 py-3 font-semibold text-slate-200 hover:bg-white/10"><i class="fa-solid fa-envelope mr-3 text-cyan-300"></i>Contact</a>
@@ -393,16 +567,19 @@
             <div class="reveal">
                 <div class="mb-6 inline-flex items-center gap-2 rounded-full border border-cyan-300/20 bg-cyan-300/10 px-4 py-2 text-sm font-semibold text-cyan-100">
                     <span class="h-2 w-2 rounded-full bg-emerald-300"></span>
-                    KUET CSE student and competitive programmer
+                    Competitive Programmer &amp; Software Developer
                 </div>
-                <h1 class="font-display text-4xl font-bold leading-tight text-white sm:text-6xl lg:text-7xl">
-                    Kazi Rifat<br>
-                    <span class="bg-gradient-to-r from-cyan-200 via-emerald-200 to-violet-200 bg-clip-text text-transparent">Al Muin</span>
+                <h1 class="hero-name font-display text-4xl font-bold leading-tight text-white sm:text-6xl lg:text-7xl"
+                    aria-label="Kazi Rifat Al Muin">
+                    <span id="typedName" data-name="Kazi Rifat&#10;Al Muin">Kazi Rifat<br>Al Muin</span><span id="nameCaret"
+                        class="typing-caret">|</span>
                 </h1>
-                <p class="typing-line mt-6 max-w-2xl text-lg leading-8 text-slate-300 sm:text-xl" aria-live="polite">
-                    <span id="typingText">I solve algorithms and build polished full stack products.</span><span class="typing-caret">|</span>
+                <p id="heroSubcopy" class="hero-stagger typing-line mt-6 max-w-2xl text-lg leading-8 text-slate-300 sm:text-xl">
+                    I am a CSE undergraduate student at KUET and a competitive programmer focused on
+                    building reliable software from strong
+                    algorithmic thinking.<br>
                 </p>
-                <div class="mt-8 flex flex-col gap-3 sm:flex-row">
+                <div id="heroActions" class="hero-stagger mt-8 flex flex-col gap-3 sm:flex-row">
                     <a href="#projects" class="magnetic-hover inline-flex items-center justify-center gap-2 rounded-full bg-cyan-300 px-6 py-3 font-bold text-ink shadow-glow transition hover:-translate-y-1 hover:bg-white">
                         <i class="fa-solid fa-diagram-project"></i>
                         View Projects
@@ -416,38 +593,28 @@
                         Contact Me
                     </a>
                 </div>
-                <div class="hero-metrics mt-10 grid grid-cols-2 gap-3 sm:max-w-xl sm:grid-cols-3">
-                    <div class="rounded-2xl border border-white/10 bg-white/[0.05] p-4">
-                        <div class="text-2xl font-extrabold text-white">2000+</div>
+                <div id="heroMetrics" class="hero-stagger hero-metrics mt-10 grid grid-cols-2 gap-3 sm:max-w-xl sm:grid-cols-3">
+                    <div class="metric-card rounded-2xl border border-white/10 bg-white/[0.05] p-4">
+                        <div class="text-2xl font-extrabold text-white"><span class="count-up" data-count="2000"
+                                data-suffix="+">0</span></div>
                         <div class="mt-1 text-xs font-semibold uppercase text-slate-400">Problems</div>
                     </div>
-                    <div class="rounded-2xl border border-white/10 bg-white/[0.05] p-4">
-                        <div class="text-2xl font-extrabold text-white">7</div>
+                    <div class="metric-card rounded-2xl border border-white/10 bg-white/[0.05] p-4">
+                        <div class="text-2xl font-extrabold text-white"><span class="count-up" data-count="7" data-suffix="+">0</span></div>
                         <div class="mt-1 text-xs font-semibold uppercase text-slate-400">Projects</div>
                     </div>
-                    <div class="rounded-2xl border border-white/10 bg-white/[0.05] p-4">
+                    <div class="metric-card rounded-2xl border border-white/10 bg-white/[0.05] p-4">
                         <div class="text-2xl font-extrabold text-white">ICPC</div>
                         <div class="mt-1 text-xs font-semibold uppercase text-slate-400">Regional</div>
                     </div>
                 </div>
             </div>
 
-            <div class="reveal relative mx-auto w-full max-w-lg">
+            <div id="heroPortrait" class="hero-portrait relative mx-auto w-full max-w-md">
                 <div class="absolute inset-8 rounded-full bg-cyan-300/20 blur-3xl"></div>
                 <div class="portrait-card tech-scan relative rounded-[2rem] border border-white/10 bg-white/[0.05] p-4 shadow-glow backdrop-blur">
                     <div class="overflow-hidden rounded-[1.5rem] border border-white/10 bg-panel">
                         <img src="images/profile.jpg" alt="Kazi Rifat Al Muin" class="aspect-[4/5] w-full object-cover">
-                    </div>
-                    <div class="absolute -bottom-5 left-5 right-5 rounded-2xl border border-white/10 bg-ink/90 p-4 shadow-2xl backdrop-blur">
-                        <div class="flex items-center justify-between gap-4">
-                            <div>
-                                <p class="text-sm font-semibold text-slate-400">Current focus</p>
-                                <p class="font-display text-lg font-bold text-white">Algorithms + Product Engineering</p>
-                            </div>
-                            <div class="hidden h-12 w-12 place-items-center rounded-xl bg-cyan-300 text-ink sm:grid">
-                                <i class="fa-solid fa-bolt"></i>
-                            </div>
-                        </div>
                     </div>
                 </div>
             </div>
@@ -455,22 +622,22 @@
 
         <section class="border-y border-white/10 bg-white/[0.03]">
             <div class="mx-auto grid max-w-7xl gap-4 px-4 py-8 sm:grid-cols-2 sm:px-6 lg:grid-cols-4 lg:px-8">
-                <div class="reveal rounded-2xl border border-white/10 bg-white/[0.04] p-5">
+                <div class="focus-card reveal rounded-2xl border border-white/10 bg-white/[0.04] p-5">
                     <i class="fa-solid fa-code text-2xl text-cyan-300"></i>
                     <h3 class="mt-4 font-display text-xl font-bold text-white">Competitive Programming</h3>
                     <p class="mt-2 text-sm leading-6 text-slate-400">Data structures, graphs, dynamic programming, and contest strategy.</p>
                 </div>
-                <div class="reveal rounded-2xl border border-white/10 bg-white/[0.04] p-5">
+                <div class="focus-card reveal rounded-2xl border border-white/10 bg-white/[0.04] p-5">
                     <i class="fa-solid fa-laptop-code text-2xl text-emerald-300"></i>
                     <h3 class="mt-4 font-display text-xl font-bold text-white">Full-Stack Systems</h3>
                     <p class="mt-2 text-sm leading-6 text-slate-400">Laravel, Spring Boot, databases, APIs, and responsive interfaces.</p>
                 </div>
-                <div class="reveal rounded-2xl border border-white/10 bg-white/[0.04] p-5">
+                <div class="focus-card reveal rounded-2xl border border-white/10 bg-white/[0.04] p-5">
                     <i class="fa-solid fa-trophy text-2xl text-amber-300"></i>
                     <h3 class="mt-4 font-display text-xl font-bold text-white">Contest Results</h3>
                     <p class="mt-2 text-sm leading-6 text-slate-400">ICPC regional contests and national onsite programming competitions.</p>
                 </div>
-                <div class="reveal rounded-2xl border border-white/10 bg-white/[0.04] p-5">
+                <div class="focus-card reveal rounded-2xl border border-white/10 bg-white/[0.04] p-5">
                     <i class="fa-solid fa-people-arrows text-2xl text-violet-300"></i>
                     <h3 class="mt-4 font-display text-xl font-bold text-white">Team Builder</h3>
                     <p class="mt-2 text-sm leading-6 text-slate-400">Mentoring, collaboration, and shipping practical software projects.</p>
@@ -481,7 +648,8 @@
         <section id="about" class="mx-auto max-w-7xl px-4 py-24 sm:px-6 lg:px-8">
             <div class="section-shell reveal max-w-3xl">
                 <p class="text-sm font-bold uppercase tracking-[0.22em] text-cyan-300">About</p>
-                <h2 class="section-title mt-3 font-display text-3xl font-bold text-white sm:text-5xl">Recruiter-friendly engineering, contest-hardened thinking.</h2>
+                <h2 class="section-title mt-3 font-display text-3xl font-bold text-white sm:text-5xl">Practical engineering,
+                    contest-hardened thinking.</h2>
                 <p class="mt-5 text-lg leading-8 text-slate-300">
                     I am a CSE undergraduate at Khulna University of Engineering & Technology. My work sits at the intersection of algorithms, backend systems, and user-facing products.
                 </p>
@@ -489,7 +657,7 @@
 
             <div class="mt-12 grid gap-6 lg:grid-cols-[0.9fr_1.1fr]">
                 <div class="reveal grid gap-4 sm:grid-cols-2 lg:grid-cols-1">
-                    <div class="rounded-2xl border border-white/10 bg-white/[0.05] p-6">
+                    <div class="about-effect-card rounded-2xl border border-white/10 bg-white/[0.05] p-6">
                         <div class="flex items-center gap-4">
                             <div class="grid h-12 w-12 place-items-center rounded-xl bg-cyan-300/15 text-cyan-200"><i class="fa-solid fa-bullseye"></i></div>
                             <div>
@@ -498,7 +666,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="rounded-2xl border border-white/10 bg-white/[0.05] p-6">
+                    <div class="about-effect-card rounded-2xl border border-white/10 bg-white/[0.05] p-6">
                         <div class="flex items-center gap-4">
                             <div class="grid h-12 w-12 place-items-center rounded-xl bg-emerald-300/15 text-emerald-200"><i class="fa-solid fa-heart"></i></div>
                             <div>
@@ -537,9 +705,10 @@
                 <div class="reveal flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
                     <div class="section-shell">
                         <p class="text-sm font-bold uppercase tracking-[0.22em] text-cyan-300">Skills</p>
-                        <h2 class="section-title mt-3 font-display text-3xl font-bold text-white sm:text-5xl">Technical stack at a glance.</h2>
+                        <h2 class="section-title mt-3 font-display text-3xl font-bold text-white sm:text-5xl">Continuous Learning Technical
+                            Profile
+                        </h2>
                     </div>
-                    <p class="max-w-xl text-slate-400">Grouped for quick recruiter scanning: languages, frameworks, databases, tooling, and core problem-solving strengths.</p>
                 </div>
 
                 <div class="mt-12 grid gap-6">
@@ -565,23 +734,71 @@
                             <article class="skill-card"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/dot-net/dot-net-original.svg" alt=".NET icon"><span>ASP.NET</span></article>
                             <article class="skill-card"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" alt="React icon"><span>React</span></article>
                             <article class="skill-card"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" alt="Node.js icon"><span>Node.js</span></article>
-                            <article class="skill-card"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bootstrap/bootstrap-original.svg" alt="Bootstrap icon"><span>Bootstrap</span></article>
-                            <article class="skill-card"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg" alt="Docker icon"><span>Docker</span></article>
-                            <article class="skill-card"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/firebase/firebase-plain.svg" alt="Firebase icon"><span>Firebase</span></article>
+                            <article class="skill-card"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/swift/swift-original.svg"
+                                    alt="SwiftUI icon"><span>SwiftUI</span></article>
                         </div>
                     </div>
 
                     <div class="skill-category reveal">
-                        <h3 class="mb-4 font-display text-xl font-bold text-white">Databases, Tools & Core</h3>
+                        <h3 class="mb-4 font-display text-xl font-bold text-white">Databases</h3>
                         <div class="grid grid-cols-2 gap-3 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6">
                             <article class="skill-card"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" alt="MySQL icon"><span>MySQL</span></article>
                             <article class="skill-card"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg" alt="PostgreSQL icon"><span>PostgreSQL</span></article>
-                            <article class="skill-card"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg" alt="MongoDB icon"><span>MongoDB</span></article>
+                            <article class="skill-card"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/firebase/firebase-plain.svg"
+                                    alt="Firebase icon"><span>Firebase</span></article>
                             <article class="skill-card"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/microsoftsqlserver/microsoftsqlserver-plain.svg" alt="SQL Server icon"><span>SQL Server</span></article>
+                            <article class="skill-card"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg"
+                                    alt="MongoDB icon"><span>MongoDB</span></article>
+                            </div>
+                            </div>
+                            
+                            <div class="skill-category reveal">
+                                <h3 class="mb-4 font-display text-xl font-bold text-white">Core Skills</h3>
+                                <div class="grid grid-cols-2 gap-3 sm:grid-cols-3 md:grid-cols-4">
+                                    <article class="skill-card"><i class="fa-solid fa-diagram-project text-4xl text-cyan-200"></i><span>Data
+                                            Structures and Algorithms</span></article>
+                                    <article class="skill-card"><i class="fa-solid fa-cubes text-4xl text-violet-200"></i><span>OOP</span></article>
+                                    <article class="skill-card"><i class="fa-solid fa-database text-4xl text-amber-300"></i><span>DBMS</span>
+                                    </article>
+                                    <article class="skill-card"><i class="fa-solid fa-chess-board text-4xl text-emerald-200"></i><span>Competitive
+                                            Programming</span></article>
+                                </div>
+                            </div>
+                            
+                            <div class="skill-category reveal">
+                                <h3 class="mb-4 font-display text-xl font-bold text-white">Tools & Platforms</h3>
+                                <div class="grid grid-cols-2 gap-3 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6">
                             <article class="skill-card"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" alt="Git icon"><span>Git</span></article>
                             <article class="skill-card"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" alt="GitHub icon"><span>GitHub</span></article>
-                            <article class="skill-card"><i class="fa-solid fa-diagram-project text-4xl text-cyan-200"></i><span>DSA</span></article>
-                            <article class="skill-card"><i class="fa-solid fa-chess-board text-4xl text-emerald-200"></i><span>Competitive Programming</span></article>
+                            <article class="skill-card"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg"
+                                    alt="Docker icon"><span>Docker</span></article>
+                            <article class="skill-card"><i class="fa-brands fa-github text-4xl text-cyan-200"></i><span>GitHub Actions</span>
+                            </article>
+                            <article class="skill-card"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jira/jira-original.svg"
+                                    alt="Jira icon"><span>Jira</span></article>
+                            <article class="skill-card"><i class="fa-solid fa-server text-4xl text-emerald-200"></i><span>cPanel Hosting</span>
+                            </article>
+                            <article class="skill-card"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/xcode/xcode-original.svg"
+                                    alt="Xcode icon"><span>Xcode</span></article>
+                            </div>
+                            </div>
+                            
+                            <div id="achievements" class="skill-category reveal">
+                                <h3 class="mb-4 font-display text-xl font-bold text-white">Competitive Achievements</h3>
+                                <div class="grid gap-3 md:grid-cols-2">
+                                    <article class="achievement-tile">Specialist at Codeforces with a maximum rating of 1489.</article>
+                                    <article class="achievement-tile">3-Star at CodeChef with a maximum rating of 1718.</article>
+                                    <article class="achievement-tile">Ranked 45th in the ICPC Asia Dhaka Regional Contest 2025.</article>
+                                    <article class="achievement-tile">Ranked 38th in the ICPC Asia Dhaka Regional Contest 2024.</article>
+                                    <article class="achievement-tile">Ranked 26th in the AUST Inter University Programming Contest 2025.</article>
+                                    <article class="achievement-tile">Ranked 34th in the UU Inter University Programming Contest 2025.</article>
+                                    <article class="achievement-tile">Ranked 42nd in the DUET Inter University Programming Contest 2025.</article>
+                                    <article class="achievement-tile">Ranked 29th in the BUET Inter University Programming Contest 2024.</article>
+                                    <article class="achievement-tile">Regional Winner of the Bangladesh Mathematical Olympiad in 2020 and 2021.
+                                    </article>
+                                    <article class="achievement-tile">Solved over 2000 programming problems across multiple online judges.</article>
+                                    <article class="achievement-tile">Participated in more than 12 national-level onsite programming contests.
+                                    </article>
                         </div>
                     </div>
                 </div>
@@ -592,13 +809,13 @@
             <div class="reveal flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
                 <div class="section-shell">
                     <p class="text-sm font-bold uppercase tracking-[0.22em] text-cyan-300">Projects</p>
-                    <h2 class="section-title mt-3 font-display text-3xl font-bold text-white sm:text-5xl">Production-minded project work.</h2>
+                    <h2 class="section-title mt-3 font-display text-3xl font-bold text-white sm:text-5xl">Production-minded project work
+                    </h2>
                 </div>
-                <p class="max-w-xl text-slate-400">Each card highlights scope, stack, and links so recruiters can understand the value quickly.</p>
             </div>
 
             <div class="mt-12 grid gap-6 lg:grid-cols-2">
-                <article class="project-card tech-scan magnetic-hover reveal lg:col-span-2">
+                <article class="project-card project-featured tech-scan magnetic-hover reveal lg:col-span-2">
                     <div class="grid gap-0 lg:grid-cols-[1.05fr_0.95fr]">
                         <div class="project-media">
                             <img src="images/mydoctor.png" alt="MyDoctor project preview">
@@ -690,6 +907,8 @@
                         <div class="tech-row"><span>Laravel</span><span>PHP</span><span>MySQL</span><span>Bootstrap</span></div>
                         <div class="project-actions">
                             <a href="https://github.com/KaziRifatAlMuin/CodeQuest" target="_blank" rel="noopener"><i class="fab fa-github"></i> GitHub</a>
+                            <a href="https://codequest.rifatalmuin.com/" target="_blank" rel="noopener"><i
+                                    class="fa-solid fa-arrow-up-right-from-square"></i> Live Demo</a>
                         </div>
                     </div>
                 </article>
@@ -715,7 +934,7 @@
             <div class="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
                 <div class="section-shell reveal text-center">
                     <p class="text-sm font-bold uppercase tracking-[0.22em] text-cyan-300">Education</p>
-                    <h2 class="section-title mt-3 font-display text-3xl font-bold text-white sm:text-5xl">Academic path and competitive proof.</h2>
+                    <h2 class="section-title mt-3 font-display text-3xl font-bold text-white sm:text-5xl">My Academic Journey</h2>
                 </div>
                 <div class="mt-12 grid gap-5">
                     <article class="reveal rounded-2xl border border-white/10 bg-white/[0.05] p-6">
@@ -730,16 +949,9 @@
                         <p class="mt-1 font-semibold text-slate-300">Govt. M. M. City College, Khulna</p>
                     </article>
                     <article class="reveal rounded-2xl border border-white/10 bg-white/[0.05] p-6">
-                        <p class="text-sm font-bold text-violet-200">Competitive Programming</p>
-                        <h3 class="mt-2 font-display text-2xl font-bold text-white">Achievements</h3>
-                        <div class="mt-4 grid gap-3 sm:grid-cols-2">
-                            <span class="achievement-pill">Codeforces Specialist</span>
-                            <span class="achievement-pill">CodeChef 3-Star</span>
-                            <span class="achievement-pill">ICPC Asia Dhaka Regional finalist</span>
-                            <span class="achievement-pill">12+ national onsite contests</span>
-                            <span class="achievement-pill">2000+ problems solved</span>
-                            <span class="achievement-pill">Bangladesh Mathematical Olympiad regional winner</span>
-                        </div>
+                        <p class="text-sm font-bold text-emerald-200">January 2017 - February 2019</p>
+                        <h3 class="mt-2 font-display text-2xl font-bold text-white">Secondary School Certificate in Science</h3>
+                        <p class="mt-1 font-semibold text-slate-300">Saint Joseph's High School, Khulna</p>
                     </article>
                 </div>
             </div>
@@ -749,7 +961,7 @@
             <div class="grid gap-8 lg:grid-cols-[0.9fr_1.1fr]">
                 <div class="section-shell reveal">
                     <p class="text-sm font-bold uppercase tracking-[0.22em] text-cyan-300">Contact</p>
-                    <h2 class="section-title mt-3 font-display text-3xl font-bold text-white sm:text-5xl">Available for serious engineering conversations.</h2>
+                    <h2 class="section-title mt-3 font-display text-3xl font-bold text-white sm:text-5xl">Available for any query</h2>
                     <p class="mt-5 text-lg leading-8 text-slate-300">Reach out for software work, collaboration, mentoring, or competitive programming discussions.</p>
                     <div class="mt-8 grid gap-4">
                         <a href="mailto:kazirifatalmuin246@gmail.com" class="contact-item"><i class="fa-solid fa-envelope"></i><span>kazirifatalmuin246@gmail.com</span></a>
@@ -759,8 +971,11 @@
                     <div class="mt-8 flex flex-wrap gap-3">
                         <a class="social-link" href="https://github.com/KaziRifatAlMuin" target="_blank" rel="noopener" aria-label="GitHub"><i class="fab fa-github"></i></a>
                         <a class="social-link" href="https://linkedin.com/in/rifatalmuin" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                        <a class="social-link" href="https://www.facebook.com/rifatalmuin21/" target="_blank" rel="noopener"
+                            aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
                         <a class="social-link" href="https://codeforces.com/profile/RifatALmuiN" target="_blank" rel="noopener" aria-label="Codeforces"><i class="fa-solid fa-code"></i></a>
-                        <a class="social-link" href="https://www.codechef.com/users/rifatalmuin" target="_blank" rel="noopener" aria-label="CodeChef"><i class="fa-solid fa-utensils"></i></a>
+                        <a class="social-link" href="https://www.codechef.com/users/rifat_al_muin" target="_blank" rel="noopener"
+                            aria-label="CodeChef"><i class="fa-solid fa-utensils"></i></a>
                     </div>
                 </div>
 
@@ -925,52 +1140,98 @@
 
         document.querySelectorAll('.reveal').forEach((element) => revealObserver.observe(element));
 
-        function initTypingText() {
-            const target = document.getElementById('typingText');
-            if (!target) return;
+                                                function initCounters() {
+                                                    const counters = document.querySelectorAll('.count-up');
+                                                    if (!counters.length) return;
 
-            const phrases = [
-                'I solve algorithms and build polished full stack products.',
-                'I design clean systems, practical UX, and reliable data flows.',
-                'I turn complex requirements into recruiter friendly software.',
-                'I work across Laravel, Spring Boot, React, databases, and competitive programming.'
-            ];
+                                                    const animateCounter = (counter) => {
+                                                        if (counter.dataset.counted === 'true') return;
+                                                        counter.dataset.counted = 'true';
 
-            let phraseIndex = 0;
-            let charIndex = 0;
-            let deleting = false;
+                                                        const target = Number(counter.dataset.count || 0);
+                                                        const suffix = counter.dataset.suffix || '';
+                                                        const duration = target > 100 ? 1800 : 1100;
+                                                        const start = performance.now();
 
-            function tick() {
-                const phrase = phrases[phraseIndex];
-                target.textContent = phrase.slice(0, charIndex);
+                                                        function tick(now) {
+                                                            const elapsed = Math.min(1, (now - start) / duration);
+                                                            const eased = 1 - Math.pow(1 - elapsed, 3);
+                                                            const value = Math.round(target * eased);
+                                                            counter.textContent = `${value.toLocaleString()}${suffix}`;
 
-                if (!deleting && charIndex < phrase.length) {
-                    charIndex += 1;
-                    window.setTimeout(tick, 34);
+                                                            if (elapsed < 1) {
+                                                                requestAnimationFrame(tick);
+                                                            }
+                                                        }
+
+                                                    requestAnimationFrame(tick);
+                                                };
+
+                                                const animateVisibleCounters = () => {
+                                                    counters.forEach((counter) => {
+                                                        const rect = counter.getBoundingClientRect();
+                                                        const visible = rect.top < window.innerHeight && rect.bottom > 0;
+                                                        if (visible) animateCounter(counter);
+                                                    });
+                                                };
+
+                                                const counterObserver = new IntersectionObserver((entries) => {
+                                                    entries.forEach((entry) => {
+                                                        if (!entry.isIntersecting) return;
+                                                        if (!document.body.classList.contains('hero-ready')) return;
+                                                        animateCounter(entry.target);
+                                                        if (entry.target.dataset.counted === 'true') {
+                                                            counterObserver.unobserve(entry.target);
+                                                        }
+                                                    });
+                                                }, { threshold: 0.65 });
+
+                                                counters.forEach((counter) => counterObserver.observe(counter));
+                                                window.addEventListener('hero-ready', animateVisibleCounters, { once: true });
+                                                window.setTimeout(animateVisibleCounters, 2400);
+                }
+
+                                                function initPointerGlow() {
+                                                    document.querySelectorAll('.metric-card, .focus-card, .about-effect-card').forEach((card) => {
+                                                        card.addEventListener('pointermove', (event) => {
+                                                            const rect = card.getBoundingClientRect();
+                                                            const x = ((event.clientX - rect.left) / rect.width) * 100;
+                                                            const y = ((event.clientY - rect.top) / rect.height) * 100;
+                                                            card.style.setProperty('--spot-x', `${x}%`);
+                                                            card.style.setProperty('--spot-y', `${y}%`);
+                                                        });
+                                                    });
+                }
+
+                                                                                                                                                                                                                                                                                                                            function initTypedHeroName() {
+                                                                                                                                                                                                                                                                                                                                const target = document.getElementById('typedName');
+                                                                                                                                                                                                                                                                                                                                const caret = document.getElementById('nameCaret');
+                                                                                                                                                                                                                                                                                                                                if (!target) return;
+
+                                                                                                                                                                                                                                                                                                                                const name = target.dataset.name || 'Kazi Rifat\nAl Muin';
+                                                                                                                                                                                                                                                                                                                                let index = 0;
+                                                                                                                                                                                                                                                                                                                                target.textContent = '';
+
+                                                                                                                                                                                                                                                                                                                                function typeName() {
+                                                                                                                                                                                                                                                                                                                                    target.textContent = name.slice(0, index);
+
+                                                                                                                                                                                                                                                                                                                                    if (index < name.length) {
+                                                                                                                                                                                                                                                                                                                                        index += 1;
+                                                                                                                                                                                                                                                                                                                                        window.setTimeout(typeName, 95);
                     return;
                 }
 
-                if (!deleting && charIndex === phrase.length) {
-                    deleting = true;
-                    window.setTimeout(tick, 1150);
-                    return;
-                }
-
-                if (deleting && charIndex > 0) {
-                    charIndex -= 1;
-                    window.setTimeout(tick, 16);
-                    return;
-                }
-
-                deleting = false;
-                phraseIndex = (phraseIndex + 1) % phrases.length;
-                window.setTimeout(tick, 180);
+                                                                                                                                                                                                                                                                                                                                if (caret) caret.style.display = 'none';
+                                                                                                                                                                                                                                                                                                                                document.body.classList.add('hero-ready');
+                                                                                                                                                                                                                                                                                                                                window.dispatchEvent(new Event('hero-ready'));
             }
 
-            tick();
+                                                                                                                                                                                                                                                                                                                            window.setTimeout(typeName, 450);
         }
 
-        initTypingText();
+                                                                                                                                                                                                                                                                                                                            initTypedHeroName();
+                                                                                                                                                                                                                                                                                                                            initCounters();
+                                                                                                                                                                                                                                                                                                                            initPointerGlow();
 
         function initGallery() {
             const slots = {
