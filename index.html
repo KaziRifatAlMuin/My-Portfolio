@@ -1277,9 +1277,10 @@
             };
             if (!slots.left || !slots.center || !slots.right) return;
 
+            const galleryVersion = '20260517-1';
+            const imageExtensions = ['jpg', 'JPG', 'jpeg', 'JPEG', 'png', 'PNG'];
             const photos = Array.from({ length: 10 }, (_, photoIndex) => ({
                 number: photoIndex + 1,
-                src: `./images/${photoIndex + 1}.jpg`,
                 alt: `Gallery photo ${photoIndex + 1}`
             }));
             let index = 0;
@@ -1301,6 +1302,10 @@
                 });
             }
 
+            function gallerySrc(photo, extensionIndex) {
+                return `./images/${photo.number}.${imageExtensions[extensionIndex]}?v=${galleryVersion}`;
+            }
+
             function updateSlot(slot, photo, isCenter) {
                 slot.classList.add('fade-out');
                 window.setTimeout(() => {
@@ -1308,18 +1313,27 @@
                     if (image) {
                         slot.classList.remove('image-missing');
                         slot.removeAttribute('data-missing');
+                        image.style.visibility = 'hidden';
+                        image.dataset.extensionIndex = '0';
                         image.onerror = () => {
-                            if (image.dataset.fallbackTried === 'true') return;
-                            image.dataset.fallbackTried = 'true';
-                            image.onerror = () => {
+                            const nextExtensionIndex = Number(image.dataset.extensionIndex || 0) + 1;
+                            if (nextExtensionIndex >= imageExtensions.length) {
                                 slot.dataset.missing = `${photo.number}.jpg missing`;
                                 slot.classList.add('image-missing');
                                 image.removeAttribute('src');
-                            };
-                            image.src = `./images/${photo.number}.JPG`;
+                                image.style.visibility = 'hidden';
+                                return;
+                            }
+
+                            image.dataset.extensionIndex = String(nextExtensionIndex);
+                            image.src = gallerySrc(photo, nextExtensionIndex);
                         };
-                        image.dataset.fallbackTried = 'false';
-                        image.src = photo.src;
+                        image.onload = () => {
+                            slot.classList.remove('image-missing');
+                            slot.removeAttribute('data-missing');
+                            image.style.visibility = 'visible';
+                        };
+                        image.src = gallerySrc(photo, 0);
                         image.alt = photo.alt;
                     }
                     slot.classList.toggle('border-cyan-300/30', isCenter);
