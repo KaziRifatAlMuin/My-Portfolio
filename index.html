@@ -255,12 +255,23 @@
         }
 
         .photo-slot {
+            aspect-ratio: 1 / 1;
+            border-radius: 1rem;
             transition: opacity 350ms ease, transform 350ms ease;
         }
 
         .photo-slot.fade-out {
             opacity: 0.45;
             transform: scale(0.96);
+        }
+
+        .gallery-image {
+            display: block;
+            width: 100%;
+            height: 100%;
+            aspect-ratio: 1 / 1;
+            object-fit: cover;
+            object-position: center;
         }
 
         .section-shell {
@@ -535,7 +546,9 @@
                 <a class="nav-link rounded-full px-4 py-2 text-sm font-semibold text-slate-300 transition hover:bg-white/10 hover:text-white" href="#contact">Contact</a>
             </div>
 
-            <a href="Doccuments/Kazi_Rifat_Al_Muin_CV.pdf" target="_blank" rel="noopener" class="hidden rounded-full bg-cyan-300 px-5 py-2.5 text-sm font-bold text-ink shadow-lg shadow-cyan-500/20 transition hover:-translate-y-0.5 hover:bg-white md:inline-flex">View CV</a>
+            <a href="Kazi_Rifat_Al_Muin_CV.pdf" target="_blank" rel="noopener"
+                class="hidden rounded-full bg-cyan-300 px-5 py-2.5 text-sm font-bold text-ink shadow-lg shadow-cyan-500/20 transition hover:-translate-y-0.5 hover:bg-white md:inline-flex">View
+                CV</a>
 
             <button id="mobileMenuButton" class="inline-flex h-11 w-11 items-center justify-center rounded-xl border border-white/10 bg-white/[0.04] text-white lg:hidden" aria-label="Open mobile menu" aria-expanded="false">
                 <span class="menu-glyph" aria-hidden="true">☰</span>
@@ -584,7 +597,8 @@
                         <i class="fa-solid fa-diagram-project"></i>
                         View Projects
                     </a>
-                    <a href="Doccuments/Kazi_Rifat_Al_Muin_CV.pdf" target="_blank" rel="noopener" class="magnetic-hover inline-flex items-center justify-center gap-2 rounded-full border border-white/15 bg-white/[0.06] px-6 py-3 font-bold text-white transition hover:-translate-y-1 hover:border-cyan-200/50 hover:bg-white/10">
+                    <a href="Kazi_Rifat_Al_Muin_CV.pdf" target="_blank" rel="noopener"
+                        class="magnetic-hover inline-flex items-center justify-center gap-2 rounded-full border border-white/15 bg-white/[0.06] px-6 py-3 font-bold text-white transition hover:-translate-y-1 hover:border-cyan-200/50 hover:bg-white/10">
                         <i class="fa-solid fa-file-lines"></i>
                         View CV
                     </a>
@@ -686,14 +700,14 @@
                         <div class="hidden gap-1 sm:flex" id="galleryDots"></div>
                     </div>
                     <div class="grid grid-cols-3 gap-3">
-                        <div id="photo-left" class="photo-slot overflow-hidden rounded-2xl border border-white/10 bg-panel">
-                            <img src="images/1.jpg" alt="Gallery photo" class="gallery-image aspect-[4/5] w-full object-cover opacity-80">
+                        <div id="photo-left" class="photo-slot overflow-hidden border border-white/10 bg-panel">
+                            <img src="./images/1.jpg" alt="Gallery photo 1" class="gallery-image opacity-80">
                         </div>
-                        <div id="photo-center" class="photo-slot overflow-hidden rounded-2xl border border-cyan-300/30 bg-panel shadow-glow">
-                            <img src="images/2.jpg" alt="Gallery photo" class="gallery-image aspect-[4/5] w-full object-cover">
+                        <div id="photo-center" class="photo-slot overflow-hidden border border-cyan-300/30 bg-panel shadow-glow">
+                            <img src="./images/2.jpg" alt="Gallery photo 2" class="gallery-image">
                         </div>
-                        <div id="photo-right" class="photo-slot overflow-hidden rounded-2xl border border-white/10 bg-panel">
-                            <img src="images/3.jpg" alt="Gallery photo" class="gallery-image aspect-[4/5] w-full object-cover opacity-80">
+                        <div id="photo-right" class="photo-slot overflow-hidden border border-white/10 bg-panel">
+                            <img src="./images/3.jpg" alt="Gallery photo 3" class="gallery-image opacity-80">
                         </div>
                     </div>
                 </div>
@@ -1241,7 +1255,7 @@
             };
             if (!slots.left || !slots.center || !slots.right) return;
 
-            const photos = ['images/1.jpg', 'images/2.jpg', 'images/3.jpg', 'images/4.jpg', 'images/5.jpg', 'images/6.jpg', 'images/7.jpg', 'images/8.jpg', 'images/9.jpg', 'images/10.jpg'];
+            const photos = ['./images/1.jpg', './images/2.jpg', './images/3.jpg', './images/4.jpg', './images/5.jpg', './images/6.jpg', './images/7.jpg', './images/8.jpg', './images/9.jpg', './images/10.jpg'];
             let index = 1;
             let timer;
             const dotsContainer = document.getElementById('galleryDots');
