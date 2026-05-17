@@ -258,7 +258,27 @@
             aspect-ratio: 1 / 1;
             border-radius: 1rem !important;
             overflow: hidden !important;
+            position: relative;
             transition: opacity 350ms ease, transform 350ms ease;
+        }
+
+        .photo-slot::after {
+            align-items: center;
+            background: rgba(8, 17, 31, 0.92);
+            color: #a5f3fc;
+            content: attr(data-missing);
+            display: none;
+            font-size: 0.85rem;
+            font-weight: 700;
+            inset: 0;
+            justify-content: center;
+            padding: 0.75rem;
+            position: absolute;
+            text-align: center;
+        }
+
+        .photo-slot.image-missing::after {
+            display: flex;
         }
 
         .photo-slot.fade-out {
@@ -520,7 +540,7 @@
         "https://linkedin.com/in/rifatalmuin",
         "https://www.facebook.com/rifatalmuin21/",
         "https://codeforces.com/profile/RifatALmuiN",
-        "https://www.codechef.com/users/rifatalmuin"
+        "https://www.codechef.com/users/rifat_al_muin"
       ],
       "knowsAbout": ["Competitive Programming", "C++", "Java", "JavaScript", "Algorithms", "Data Structures", "Web Development"],
       "email": "kazirifatalmuin246@gmail.com"
@@ -1286,9 +1306,16 @@
                 window.setTimeout(() => {
                     const image = slot.querySelector('img');
                     if (image) {
+                        slot.classList.remove('image-missing');
+                        slot.removeAttribute('data-missing');
                         image.onerror = () => {
                             if (image.dataset.fallbackTried === 'true') return;
                             image.dataset.fallbackTried = 'true';
+                            image.onerror = () => {
+                                slot.dataset.missing = `${photo.number}.jpg missing`;
+                                slot.classList.add('image-missing');
+                                image.removeAttribute('src');
+                            };
                             image.src = `./images/${photo.number}.JPG`;
                         };
                         image.dataset.fallbackTried = 'false';
@@ -1310,8 +1337,9 @@
                 updateSlot(slots.center, photos[centerIndex], true);
                 updateSlot(slots.right, photos[rightIndex], false);
                 dotsContainer?.querySelectorAll('button').forEach((dot, dotIndex) => {
-                    dot.classList.toggle('bg-cyan-200', dotIndex === index);
-                    dot.classList.toggle('bg-white/20', dotIndex !== index);
+                    const active = dotIndex === leftIndex || dotIndex === centerIndex || dotIndex === rightIndex;
+                    dot.classList.toggle('bg-cyan-200', active);
+                    dot.classList.toggle('bg-white/20', !active);
                 });
             }
 
