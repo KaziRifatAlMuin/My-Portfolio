@@ -256,7 +256,8 @@
 
         .photo-slot {
             aspect-ratio: 1 / 1;
-            border-radius: 1rem;
+            border-radius: 1rem !important;
+            overflow: hidden !important;
             transition: opacity 350ms ease, transform 350ms ease;
         }
 
@@ -270,6 +271,7 @@
             width: 100%;
             height: 100%;
             aspect-ratio: 1 / 1;
+            border-radius: 0 !important;
             object-fit: cover;
             object-position: center;
         }
@@ -1255,8 +1257,12 @@
             };
             if (!slots.left || !slots.center || !slots.right) return;
 
-            const photos = ['./images/1.jpg', './images/2.jpg', './images/3.jpg', './images/4.jpg', './images/5.jpg', './images/6.jpg', './images/7.jpg', './images/8.jpg', './images/9.jpg', './images/10.jpg'];
-            let index = 1;
+            const photos = Array.from({ length: 10 }, (_, photoIndex) => ({
+                number: photoIndex + 1,
+                src: `./images/${photoIndex + 1}.jpg`,
+                alt: `Gallery photo ${photoIndex + 1}`
+            }));
+            let index = 0;
             let timer;
             const dotsContainer = document.getElementById('galleryDots');
 
@@ -1275,11 +1281,20 @@
                 });
             }
 
-            function updateSlot(slot, src, isCenter) {
+            function updateSlot(slot, photo, isCenter) {
                 slot.classList.add('fade-out');
                 window.setTimeout(() => {
                     const image = slot.querySelector('img');
-                    if (image) image.src = src;
+                    if (image) {
+                        image.onerror = () => {
+                            if (image.dataset.fallbackTried === 'true') return;
+                            image.dataset.fallbackTried = 'true';
+                            image.src = `./images/${photo.number}.JPG`;
+                        };
+                        image.dataset.fallbackTried = 'false';
+                        image.src = photo.src;
+                        image.alt = photo.alt;
+                    }
                     slot.classList.toggle('border-cyan-300/30', isCenter);
                     slot.classList.toggle('shadow-glow', isCenter);
                     slot.classList.toggle('border-white/10', !isCenter);
@@ -1288,10 +1303,11 @@
             }
 
             function updateGallery() {
-                const leftIndex = (index - 1 + photos.length) % photos.length;
-                const rightIndex = (index + 1) % photos.length;
+                const leftIndex = index;
+                const centerIndex = (index + 1) % photos.length;
+                const rightIndex = (index + 2) % photos.length;
                 updateSlot(slots.left, photos[leftIndex], false);
-                updateSlot(slots.center, photos[index], true);
+                updateSlot(slots.center, photos[centerIndex], true);
                 updateSlot(slots.right, photos[rightIndex], false);
                 dotsContainer?.querySelectorAll('button').forEach((dot, dotIndex) => {
                     dot.classList.toggle('bg-cyan-200', dotIndex === index);
