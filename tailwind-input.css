@@ -8,9 +8,9 @@
 
 body {
     background:
-        radial-gradient(circle at 12% 5%, rgba(20, 184, 166, 0.16), transparent 34rem),
-        radial-gradient(circle at 88% 8%, rgba(99, 102, 241, 0.14), transparent 32rem),
-        linear-gradient(180deg, #08111f 0%, #0b1424 42%, #07101d 100%);
+        radial-gradient(circle at 12% 5%, rgba(34, 211, 238, 0.18), transparent 34rem),
+        radial-gradient(circle at 88% 8%, rgba(16, 185, 129, 0.13), transparent 32rem),
+        linear-gradient(180deg, #07111f 0%, #0a1728 42%, #06101d 100%);
 }
 
 .noise-layer {
